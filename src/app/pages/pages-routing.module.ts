@@ -11,6 +11,12 @@ const routes: Routes = [{
     path: 'dashboard',
     component: DashboardComponent,
   }, {
+    path: 'takequiz',
+    loadChildren: './takequiz/takequiz.module#TakeQuizModule',
+  }, {
+    path: 'addquiz',
+    loadChildren: './addquiz/addquiz.module#AddQuizModule',
+  }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {

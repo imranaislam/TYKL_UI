@@ -14,11 +14,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Quizzes',
     icon: 'nb-keypad',
-    link: '/pages/ui-features',
+    link: '/pages/addquiz',
     children: [
       {
         title: 'Create a Quiz',
-        link: '/pages/ui-features/grid',
+        link: '/pages/addquiz' 
+        // link: '/pages/ui-features/grid',
       }, /*
       {
         title: 'Test',
@@ -34,7 +35,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       }, */
       {
         title: 'Take a Quiz',
-        link: '/pages/ui-features/typography',
+        link: '/pages/takequiz',
       },
     ],
   },
