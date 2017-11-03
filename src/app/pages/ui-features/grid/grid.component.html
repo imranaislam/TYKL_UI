@@ -1,251 +1,53 @@
-<div class="row">
-  <div class="col-md-12">
-    <nb-card>
-      <nb-card-header>
-        Grid System
-      </nb-card-header>
-      <nb-card-body>
-        <h5 class="grid-h">Stacked to horizontal</h5>
-        <div class="row show-grid">
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-          <div class="col-md-1">
-            <div>.col-md-1</div>
-          </div>
-        </div>
-        <div class="row show-grid">
-          <div class="col-md-8">
-            <div>.col-md-8</div>
-          </div>
-          <div class="col-md-4">
-            <div>.col-md-4</div>
-          </div>
-        </div>
-        <div class="row show-grid">
-          <div class="col-md-4">
-            <div>.col-md-4</div>
-          </div>
-          <div class="col-md-4">
-            <div>.col-md-4</div>
-          </div>
-          <div class="col-md-4">
-            <div>.col-md-4</div>
-          </div>
-        </div>
-        <div class="row show-grid">
-          <div class="col-md-6">
-            <div>.col-md-6</div>
-          </div>
-          <div class="col-md-6">
-            <div>.col-md-6</div>
-          </div>
-        </div>
+<p>This is the login page.</p>
+<router-outlet></router-outlet>
+<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
-        <h5 class="grid-h">Mobile and desktop</h5>
-        <div class="row show-grid">
-          <div class="col-12 col-md-8">
-            <div>.col-12 .col-md-8</div>
+    <div id="login-overlay" class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Login to Test Your Knowledge</h4>
           </div>
-          <div class="col-6 col-md-4">
-            <div>.col-6 .col-md-4</div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-xs-6">
+                      <div class="well">
+                          <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                              <div class="form-group">
+                                  <label for="username" class="control-label">Username</label>
+                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="username">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password</label>
+                                  <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" placeholder="password">
+                                  <span class="help-block"></span>
+                              </div>
+                              <!-- <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div> -->
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="remember" id="remember"> Remember login
+                                  </label>
+                                  <!-- <p class="help-block">(if this is a private computer)</p> -->
+                              </div>
+                              <button type="submit" class="btn btn-success btn-block">Login</button>
+                              <!-- <a href="/forgot/" class="btn btn-default btn-block">Help to login</a> -->
+                          </form>
+                      </div>
+                  </div>
+                  <div class="col-xs-6">
+                      <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                      <ul class="list-unstyled" style="line-height: 2">
+                          <li><span class="fa fa-check text-success"></span>  Register as Quiz Taker</li>
+                          <li><span class="fa fa-check text-success"></span> Register as Quiz Creator</li>
+                          <li><span class="fa fa-check text-success"></span> Select the area of quiz</li>
+                          <li><span class="fa fa-check text-success"></span>Check your Knowledge</li>
+                          <li><span class="fa fa-check text-success"></span> Come back any time </li>
+                          <li><a href="/read-more/"><u>Read more</u></a></li>
+                      </ul>
+                      <p><a href="/new-customer/" class="btn btn-info btn-block">Yes please, register now!</a></p>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="row show-grid">
-          <div class="col-6 col-md-4">
-            <div>.col-6 .col-md-4</div>
-          </div>
-          <div class="col-6 col-md-4">
-            <div>col-6 .col-md-4</div>
-          </div>
-          <div class="col-6 col-md-4">
-            <div>.col-6 .col-md-4</div>
-          </div>
-        </div>
-        <div class="row show-grid">
-          <div class="col-6">
-            <div>.col-6</div>
-          </div>
-          <div class="col-6">
-            <div>.col-6</div>
-          </div>
-        </div>
-
-        <h5 class="grid-h">Mobile, tablet, desktop</h5>
-        <div class="row show-grid">
-          <div class="col-12 col-sm-6 col-md-8">
-            <div>.col-12 .col-sm-6 .col-md-8</div>
-          </div>
-          <div class="col-6 col-md-4">
-            <div>.col-6 .col-md-4</div>
-          </div>
-        </div>
-        <div class="row show-grid">
-          <div class="col-6 col-sm-4">
-            <div>.col-6 .col-sm-4</div>
-          </div>
-          <div class="col-6 col-sm-4">
-            <div>.col-6 .col-sm-4</div>
-          </div>
-          <div class="col-6 col-sm-4">
-            <div>.col-6 .col-sm-4</div>
-          </div>
-        </div>
-
-        <h5 class="grid-h">Column wrapping</h5>
-        <div class="row show-grid">
-          <div class="col-9">
-            <div>.col-9</div>
-          </div>
-          <div class="col-4">
-            <div>.col-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.
-            </div>
-          </div>
-          <div class="col-6">
-            <div>.col-6<br>Subsequent columns continue along the new line.</div>
-          </div>
-        </div>
-
-        <h5 class="grid-h">Responsive column resets</h5>
-        <div class="row show-grid">
-          <div class="col-6 col-sm-3">
-            <div>.col-6 .col-sm-3
-              <p>Resize your viewport or check it out on your phone for an example.</p>
-            </div>
-          </div>
-          <div class="col-6 col-sm-3">
-            <div>.col-6 .col-sm-3</div>
-          </div>
-          <div class="col-6 col-sm-3">
-            <div>.col-6 .col-sm-3</div>
-          </div>
-          <div class="col-6 col-sm-3">
-            <div>.col-6 .col-sm-3</div>
-          </div>
-        </div>
-
-        <h5 class="grid-h">Offsetting columns</h5>
-        <div class="row show-grid">
-          <div class="col-md-4">
-            <div>.col-md-4</div>
-          </div>
-          <div class="col-md-4 offset-md-4">
-            <div>.col-md-4 .offset-md-4</div>
-          </div>
-        </div>
-        <div class="row show-grid">
-          <div class="col-md-3 offset-md-3">
-            <div>.col-md-3 .offset-md-3</div>
-          </div>
-          <div class="col-md-3 offset-md-3">
-            <div>.col-md-3 .offset-md-3</div>
-          </div>
-        </div>
-        <div class="row show-grid">
-          <div class="col-md-6 offset-md-3">
-            <div>.col-md-6 .offset-md-3</div>
-          </div>
-        </div>
-
-        <h5 class="grid-h">Grid options</h5>
-        <div class="table-responsive">
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th></th>
-                <th> Extra small devices
-                  <small>Phones (&lt;576px)</small>
-                </th>
-                <th> Small devices
-                  <small>Tablets (≥576px)</small>
-                </th>
-                <th> Medium devices
-                  <small>Desktops (≥768px)</small>
-                </th>
-                <th> Large devices
-                  <small>Desktops (≥992px)</small>
-                </th>
-                <th> Large devices
-                  <small>Desktops (≥1200px)</small>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="text-nowrap" scope="row">Grid behavior</th>
-                <td>Horizontal at all times</td>
-                <td colspan="4">Collapsed to start, horizontal above breakpoints</td>
-              </tr>
-              <tr>
-                <th class="text-nowrap" scope="row">Container width</th>
-                <td>None (auto)</td>
-                <td>540px</td>
-                <td>720px</td>
-                <td>960px</td>
-                <td>1140px</td>
-              </tr>
-              <tr>
-                <th class="text-nowrap" scope="row">Class prefix</th>
-                <td><code>.col-</code></td>
-                <td><code>.col-sm-</code></td>
-                <td><code>.col-md-</code></td>
-                <td><code>.col-lg-</code></td>
-                <td><code>.col-xl-</code></td>
-              </tr>
-              <tr>
-                <th class="text-nowrap" scope="row"># of columns</th>
-                <td colspan="5">12</td>
-              </tr>
-              <tr>
-                <th class="text-nowrap" scope="row">Gutter width</th>
-                <td colspan="5">1.875rem / 30px (15px on each side of a column)</td>
-              </tr>
-              <tr>
-                <th class="text-nowrap" scope="row">Nestable</th>
-                <td colspan="5">Yes</td>
-              </tr>
-              <tr>
-                <th class="text-nowrap" scope="row">Offsets</th>
-                <td colspan="5">Yes</td>
-              </tr>
-              <tr>
-                <th class="text-nowrap" scope="row">Column ordering</th>
-                <td colspan="5">Yes</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </nb-card-body>
-    </nb-card>
+      </div>
   </div>
-</div>

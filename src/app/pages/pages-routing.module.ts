@@ -28,12 +28,15 @@ const routes: Routes = [{
   }, {
     path: 'forms',
     loadChildren: './forms/forms.module#FormsModule',
+  /*}, {
+    path: 'mylogin',
+    loadChildren: './mylogin/mylogin',*/
   }, {
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
   }, {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: '/auth/login',
     pathMatch: 'full',
   }],
 }];
