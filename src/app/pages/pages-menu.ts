@@ -19,7 +19,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Create a Quiz',
         link: '/pages/addquiz',
-      },  
+      },
         // link: '/pages/ui-features/grid',
      /*
       {

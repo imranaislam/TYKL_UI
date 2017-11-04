@@ -5,8 +5,8 @@ import { TakeQuizComponent } from './takequiz.component';
 const routes: Routes = [
   {
     path: '',
-    component: TakeQuizComponent
-  }
+    component: TakeQuizComponent,
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);
