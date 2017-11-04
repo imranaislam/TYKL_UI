@@ -18,9 +18,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Create a Quiz',
-        link: '/pages/addquiz' 
+        link: '/pages/addquiz',
+      },  
         // link: '/pages/ui-features/grid',
-      }, /*
+     /*
       {
         title: 'Test',
         link: '/pages/mylogin/mylogin',
