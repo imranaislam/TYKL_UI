@@ -22,7 +22,7 @@ import { MyModalComponent } from './pages/addquiz/mymodal';
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    AppRoutingModule,//
+    AppRoutingModule, 
 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
