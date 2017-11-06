@@ -14,14 +14,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MyModalComponent } from './pages/addquiz/mymodal';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MyModalComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    AppRoutingModule,
+    AppRoutingModule,//
 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
@@ -31,6 +32,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
+    entryComponents: [
+      MyModalComponent,
+   ],
 })
 export class AppModule {
 }

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AddQuizComponent } from './addquiz.component';
 import { routing } from './addquiz.routing';
+import { MyModalsComponent } from './mymodals.component';
+import { MyModalComponent } from './mymodal';
 
 @NgModule({
   imports: [
@@ -13,6 +15,11 @@ import { routing } from './addquiz.routing';
   ],
   declarations: [
     AddQuizComponent,
+    MyModalsComponent,
+   // MyModalComponent,
   ],
+ // entryComponents: [
+ //     MyModalComponent,
+ //  ],
 })
 export class AddQuizModule {}

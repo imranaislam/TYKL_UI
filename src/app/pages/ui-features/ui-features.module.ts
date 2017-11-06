@@ -35,7 +35,7 @@ const components = [
     ...components,
   ],
   entryComponents: [
-    ModalComponent,
+   ModalComponent,
   ],
 })
 export class UiFeaturesModule { }

@@ -65,6 +65,16 @@
     @include nb-card-header();
     border-bottom: none;
     padding-bottom: 0;
+    font-size: 50;
+  }
+
+  /*.bgimg {
+    //background-image: url('/assets/images/camera4.jpg');
+    background-color: rgb(189, 185, 204);
+  } */
+  .myalign {
+    display: flex;
+    align-items: center;
   }
 
   @include nb-for-theme(cosmic) {

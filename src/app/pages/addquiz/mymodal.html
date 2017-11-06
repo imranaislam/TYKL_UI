@@ -1,0 +1,15 @@
+
+ <div class="modal-header">
+    <span>{{ modalHeader }}</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    {{ modalContent }}<div class="input-group">
+        <input type="text" placeholder="Enter Your Quiz Name Here" class="form-control"/>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-md btn-primary" (click)="closeModal()">Submit</button>
+  </div>

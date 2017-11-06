@@ -1,4 +1,4 @@
-<div class="header">My Playlist</div>
+<div class="header">Song of The Day</div>
 
 <div class="body">
 
@@ -9,7 +9,7 @@
       <span>{{ track.artist }}</span>
     </div>
   </div>
-
+<!--
   <div class="progress-wrap">
     <input type="range" class="progress" [value]="getProgress()" min="0" max="100" step="0.01"
            (input)="setProgress(duration.value)" #duration>
@@ -19,7 +19,7 @@
   <div class="timing">
     <small class="current">{{ player.currentTime | timing }}</small>
     <small class="remaining">- {{ player.duration - player.currentTime | timing }}</small>
-  </div>
+  </div> -->
 
   <div class="controls">
     <i class="nb-shuffle shuffle" [class.active]="shuffle" (click)="toggleShuffle()"></i>

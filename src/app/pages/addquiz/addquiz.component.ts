@@ -1,9 +1,16 @@
+
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'ngx-add-quiz',
-  template: `<strong>Create a New Quiz</strong>`,
+  template: `<ngx-mymodals></ngx-mymodals>`,
 })
 export class AddQuizComponent {
   constructor() {}
 }
+
+
+
+
+
