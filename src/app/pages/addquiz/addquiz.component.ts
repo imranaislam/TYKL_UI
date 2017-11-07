@@ -9,10 +9,9 @@ import { Component } from '@angular/core';
 export class AddQuizComponent {
   constructor() {}
 
-  mycollapse(q){
+mycollapse(q){ 
 
-    var myvar = document.getElementById(q).hidden;
-    
+    const myvar = document.getElementById(q).hidden;
     if (myvar === false) {
       document.getElementById(q).hidden = true;
     } else {

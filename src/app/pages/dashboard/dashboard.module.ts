@@ -5,8 +5,8 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatusCardComponent } from './status-card/status-card.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { RoomsComponent } from './rooms/rooms.component';
-import { RoomSelectorComponent } from './rooms/room-selector/room-selector.component';
+import { HomeComponent } from './home/home.component';
+import { HomeSelectorComponent } from './home/home-selector/home-sel.component';
 import { TemperatureComponent } from './temperature/temperature.component';
 import { TemperatureDraggerComponent } from './temperature/temperature-dragger/temperature-dragger.component';
 import { TeamComponent } from './team/team.component';
@@ -16,7 +16,7 @@ import { ElectricityComponent } from './electricity/electricity.component';
 import { ElectricityChartComponent } from './electricity/electricity-chart/electricity-chart.component';
 import { WeatherComponent } from './weather/weather.component';
 import { SolarComponent } from './solar/solar.component';
-import { PlayerComponent } from './rooms/player/player.component';
+import { PlayerComponent } from './home/player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 
@@ -31,9 +31,8 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
     StatusCardComponent,
     TemperatureDraggerComponent,
     ContactsComponent,
-    RoomSelectorComponent,
     TemperatureComponent,
-    RoomsComponent,
+    HomeComponent,
     TeamComponent,
     KittenComponent,
     SecurityCamerasComponent,
@@ -44,6 +43,7 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
+    HomeSelectorComponent,
   ],
 })
 export class DashboardModule { }

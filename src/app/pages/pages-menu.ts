@@ -40,7 +40,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-  {
+  /* {
     title: 'Tables',
     icon: 'nb-tables',
     children: [
@@ -49,16 +49,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/tables/smart-table',
       },
     ],
-  },
+  }, */
   {
     title: 'Auth',
     icon: 'nb-locked',
     children: [
       {
-        title: 'Login',
+        title: 'Logout',
         link: '/auth/login',
       },
-      {
+     /* {
         title: 'Register',
         link: '/auth/register',
       },

@@ -3,7 +3,7 @@
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
 @include nb-install-component() {
-  ngx-room-selector {
+  ngx-home-selector {
     width: 70%;
     border-right: 2px solid nb-theme(separator);
     background: url('../../../../assets/images/square_pattern.svg') repeat;
@@ -23,12 +23,12 @@
     flex-direction: row;
   }
 
-  ngx-room-selector {
+  ngx-home-selector {
     display: flex;
     flex-direction: column;
     flex: 1;
 
-    /deep/ .room-selector {
+    /deep/ .home-selector {
       display: flex;
       align-items: center;
       justify-items: center;
@@ -41,11 +41,11 @@
   }
 
   @include media-breakpoint-down(md) {
-    &.expanded ngx-room-selector {
+    &.expanded ngx-home-selector {
       display: none;
     }
 
-    ngx-room-selector, ngx-player {
+    ngx-home-selector, ngx-player {
       width: 100%;
       border: none;
     }

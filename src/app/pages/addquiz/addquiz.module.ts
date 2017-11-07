@@ -16,10 +16,6 @@ import { MyModalComponent } from './mymodal';
   declarations: [
     AddQuizComponent,
     MyModalsComponent,
-   // MyModalComponent,
   ],
- // entryComponents: [
- //     MyModalComponent,
- //  ],
 })
 export class AddQuizModule {}

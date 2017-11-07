@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ngx-footer',
   styleUrls: ['./footer.component.scss'],
   template: `
-    <span class="created-by">Created with ♥ by &nbsp;<b>Devi</b></span>
+    <span class="created-by">Created with ♥ by &nbsp;<b>Bobby</b></span>
   `,
 })
 export class FooterComponent {

@@ -1,9 +1,9 @@
 <div class="input-group">
-    <input type="text" placeholder="Quiz Name" class="form-control"/>
+    <input type="text" placeholder="Enter Quiz Name" class="form-control"/>
   </div><br>
   
   <div class="input-group">
-    <input type="text" id="q1" required placeholder="Question 1" class="form-control offset-md-1"/>
+    <input type="text" id="q1" required placeholder="Enter First Question" class="form-control offset-md-1"/>
   </div>
 
   <div class="panel panel-default">
@@ -60,9 +60,9 @@
   </div>
 
   </div>
-  
+  <br>
   <div class="input-group">
-        <input type="text" id="q2" required placeholder="Question 2" class="form-control offset-md-1"/>
+        <input type="text" id="q2" required placeholder="Enter Second Question" class="form-control offset-md-1"/>
       </div>
     
       <div class="panel panel-default">
@@ -118,4 +118,119 @@
       </div>
     
       </div>
- 
+      <br>
+      <div class="input-group">
+        <input type="text" id="q3" required placeholder="Enter Third Question" class="form-control offset-md-1"/>
+      </div>
+    
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="ion-chevron-down offset-md-1" data-toggle="collapse" data-parent="#accordion" href="javascript:void(0)" (click)="mycollapse('divq3')"><span class="glyphicon glyphicon-th-list">
+                </span>Answers</a>
+            </h4>
+        </div>
+        
+        </div>
+    
+      <div id="divq3" hidden class="input-group">
+      <div class="row col-md-10">
+    
+        <table border="0" class="offset-md-2 col-md-10">
+            <tr><td></td><td>Correct ?</td></tr>
+            <tr>
+                <td>
+                   <div class="input-group">
+                    <input type="text" required id="q3a1"placeholder="Answer a." class="form-control"/>
+                   </div> 
+                </td>
+                <td >
+                    &nbsp;&nbsp;<input type="radio" name="radioQ3"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <div class="input-group"> 
+                    <input type="text" required id="q3a2" placeholder="Answer b." class="form-control"/>
+                     </div> 
+                </td>
+                <td>&nbsp;&nbsp;<input type="radio" name="radioQ3" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group">
+                    <input type="text" required id="q3a3" placeholder="Answer c." class="form-control"/>
+                    </div> 
+                </td>
+                <td>&nbsp;&nbsp;<input name="radioQ3" type="radio"></td>
+            </tr>
+        <tr>
+            <td><div class="input-group"> 
+                <input type="text" required id="q3a4" placeholder="Answer d." class="form-control"/>
+            </div>
+            </td>
+            <td>&nbsp;&nbsp;<input type="radio" name="radioQ3">
+            </td>
+        </tr>
+      </table>
+      </div>
+    
+      </div>
+      <br>
+      <div class="input-group">
+        <input type="text" id="q4" required placeholder="Enter Fourth Question" class="form-control offset-md-1"/>
+      </div>
+    
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="ion-chevron-down offset-md-1" data-toggle="collapse" data-parent="#accordion" href="javascript:void(0)" (click)="mycollapse('divq4')"><span class="glyphicon glyphicon-th-list">
+                </span>Answers</a>
+            </h4>
+        </div>
+        
+        </div>
+    
+      <div id="divq4" hidden class="input-group">
+      <div class="row col-md-10">
+    
+        <table border="0" class="offset-md-2 col-md-10">
+            <tr><td></td><td>Correct ?</td></tr>
+            <tr>
+                <td>
+                   <div class="input-group">
+                    <input type="text" required id="q4a1"placeholder="Answer a." class="form-control"/>
+                   </div> 
+                </td>
+                <td >
+                    &nbsp;&nbsp;<input type="radio" name="radioQ4"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <div class="input-group"> 
+                    <input type="text" required id="q4a2" placeholder="Answer b." class="form-control"/>
+                     </div> 
+                </td>
+                <td>&nbsp;&nbsp;<input type="radio" name="radioQ4" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group">
+                    <input type="text" required id="q4a3" placeholder="Answer c." class="form-control"/>
+                    </div> 
+                </td>
+                <td>&nbsp;&nbsp;<input name="radioQ4" type="radio"></td>
+            </tr>
+        <tr>
+            <td><div class="input-group"> 
+                <input type="text" required id="q4a4" placeholder="Answer d." class="form-control"/>
+            </div>
+            </td>
+            <td>&nbsp;&nbsp;<input type="radio" name="radioQ4">
+            </td>
+        </tr>
+      </table>
+      </div>
+      </div><br> 
+      <button class="btn btn-success">Submit Quiz</button>
