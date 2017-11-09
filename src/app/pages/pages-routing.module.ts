@@ -16,7 +16,7 @@ const routes: Routes = [{
   }, {
     path: 'registration',
     loadChildren: './registration/registration.module#RegistrationModule',
-  },{
+  }, {
     path: 'viewquiz',
     loadChildren: './viewquiz/viewquiz.module#ViewQuizModule',
   }, {
