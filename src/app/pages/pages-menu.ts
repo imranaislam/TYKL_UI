@@ -20,12 +20,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Create a Quiz',
         link: '/pages/addquiz',
       },
-        // link: '/pages/ui-features/grid',
-     /*
-      {
-        title: 'Test',
-        link: '/pages/mylogin/mylogin',
-      },
+  
       /*{
         title: 'Icons',
         link: '/pages/ui-features/icons',
@@ -39,6 +34,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/takequiz',
       },
     ],
+  }, {
+    title: 'Test Login',
+    icon: 'nb-home',
+    link: '/pages/login',
   },
   /* {
     title: 'Tables',

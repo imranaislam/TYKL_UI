@@ -11,6 +11,9 @@ const routes: Routes = [{
     path: 'dashboard',
     component: DashboardComponent,
   }, {
+    path: 'login',
+    loadChildren: './login/login.module#LoginModule',
+  }, {
     path: 'takequiz',
     loadChildren: './takequiz/takequiz.module#TakeQuizModule',
   }, {
