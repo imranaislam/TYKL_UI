@@ -38,8 +38,7 @@ export class AddQuizComponent implements OnInit {
             }
 
             public addQuizSubmit(){
-              var x = this.radioQ1;
-alert(x);
+              
               this.headers = new Headers();
               this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
               this.http.post('http://localhost:8080/test-your-knowledge/add'
