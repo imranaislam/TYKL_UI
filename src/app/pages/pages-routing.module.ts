@@ -14,11 +14,14 @@ const routes: Routes = [{
     path: 'login',
     loadChildren: './login/login.module#LoginModule',
   }, {
-    path: 'takequiz',
-    loadChildren: './takequiz/takequiz.module#TakeQuizModule',
+    path: 'viewquiz',
+    loadChildren: './viewquiz/viewquiz.module#ViewQuizModule',
   }, {
     path: 'addquiz',
     loadChildren: './addquiz/addquiz.module#AddQuizModule',
+  },  {
+    path: 'takequiz',
+    loadChildren: './takequiz/takequiz.module#TakeQuizModule',
   }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
@@ -28,9 +31,6 @@ const routes: Routes = [{
   }, {
     path: 'maps',
     loadChildren: './maps/maps.module#MapsModule',
-  }, {
-    path: 'charts',
-    loadChildren: './charts/charts.module#ChartsModule',
   }, {
     path: 'editors',
     loadChildren: './editors/editors.module#EditorsModule',
