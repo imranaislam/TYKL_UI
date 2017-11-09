@@ -1,9 +1,9 @@
 <div class="input-group">
-    <input type="text" placeholder="Enter Quiz Name" class="form-control"/>
+    <input type="text" id="quizName" name="quizName" [(ngModel)]="quizName" placeholder="Enter Quiz Name" class="form-control"/>
   </div><br>
   
   <div class="input-group">
-    <input type="text" id="q1" required placeholder="Enter First Question" class="form-control offset-md-1"/>
+    <input type="text" id="q1" name="q1" [(ngModel)]="q1" required placeholder="Enter First Question" class="form-control offset-md-1"/>
   </div>
 
   <div class="panel panel-default">
@@ -24,35 +24,35 @@
         <tr>
             <td>
                <div class="input-group">
-                <input type="text" required id="q1a1"placeholder="Answer a." class="form-control"/>
+                <input type="text" required id="q1a1" name="q1a1" [(ngModel)]="q1a1" placeholder="Answer a." class="form-control"/>
                </div> 
             </td>
             <td >
-                &nbsp;&nbsp;<input type="radio" name="radioQ1"/>
+                &nbsp;&nbsp;<input value="q1a1" [(ngModel)]="radioQ1" type="radio" id="radioQ1" name="radioQ1"/>
             </td>
         </tr>
         <tr>
             <td>
                  <div class="input-group"> 
-                <input type="text" required id="q1a2" placeholder="Answer b." class="form-control"/>
+                <input type="text" required id="q1a2"  [(ngModel)]="q1a2" placeholder="Answer b." class="form-control"/>
                  </div> 
             </td>
-            <td>&nbsp;&nbsp;<input type="radio" name="radioQ1" /></td>
+            <td>&nbsp;&nbsp;<input value="q1a2" [(ngModel)]="radioQ1" type="radio" id="radioQ1" name="radioQ1" /></td>
         </tr>
         <tr>
             <td>
                 <div class="input-group">
-                <input type="text" required id="q1a3" placeholder="Answer c." class="form-control"/>
+                <input type="text" required id="q1a3" name="q1a3" [(ngModel)]="q1a3" placeholder="Answer c." class="form-control"/>
                 </div> 
             </td>
-            <td>&nbsp;&nbsp;<input name="radioQ1" type="radio"></td>
+            <td>&nbsp;&nbsp;<input value="q1a3" [(ngModel)]="radioQ1" type="radio" id="radioQ1" name="radioQ1" /></td>
         </tr>
     <tr>
         <td><div class="input-group"> 
-            <input type="text" required id="q1a4" placeholder="Answer d." class="form-control"/>
+            <input type="text" required id="q1a4" name="q1a4" [(ngModel)]="q1a4" placeholder="Answer d." class="form-control"/>
         </div>
         </td>
-        <td>&nbsp;&nbsp;<input type="radio" name="radioQ1">
+        <td>&nbsp;&nbsp;<input value="q1a4" [(ngModel)]="radioQ1" type="radio" id="radioQ1" name="radioQ1">
         </td>
     </tr>
     <tr>&nbsp;</tr>
@@ -60,7 +60,7 @@
   </div>
 
   </div>
-  <br>
+  <br> <!--
   <div class="input-group">
         <input type="text" id="q2" required placeholder="Enter Second Question" class="form-control offset-md-1"/>
       </div>
@@ -232,5 +232,5 @@
         </tr>
       </table>
       </div>
-      </div><br> 
-      <button class="btn btn-success">Submit Quiz</button>
+      </div><br> -->
+      <button  (click)="addQuizSubmit()" class="btn btn-success">Submit Quiz</button>
