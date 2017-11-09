@@ -9,9 +9,9 @@ import {Http, Headers} from '@angular/http';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-    private username;
-    private password;
-    private headers;
+    public username;
+    public password;
+    public headers;
     
     postData: string;
     userrole: string;
@@ -28,11 +28,11 @@ export class LoginComponent implements OnInit {
      this.http.post('http://localhost:8080/test-your-knowledge/login'
       , `username=${this.username}&password=${this.password}`, {headers: this.headers})
       .subscribe(
-          //data => this.postData = JSON.stringify(data),
-           data => {console.log(data)},
+          data => this.postData = JSON.stringify(data),
+           
              
       );
-      //alert(this.postData);
+      // alert(this.postData);
     }
 
 }

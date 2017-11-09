@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
             <p>Output: {{postData}}</p>
   
   `,
-    providers: [HTTPTestService]
+    providers: [HTTPTestService],
 })
 export class TakeQuizComponent {
    constructor(private httpServiceVar: HTTPTestService) {}
@@ -25,7 +25,7 @@ export class TakeQuizComponent {
       .subscribe (
       data => this.getData = JSON.stringify(data),
         Error => alert(Error),
-        () => console.log("finished"));
+       );
 
   } 
 

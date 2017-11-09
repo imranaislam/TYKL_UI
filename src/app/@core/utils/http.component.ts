@@ -8,9 +8,7 @@ export class HTTPTestService {
     constructor (private myhttp: Http) {}
 
     getCurrentTime() {
-        return this.myhttp.get("http://localhost:8080/ERS/all")
+        return this.myhttp.get('http://localhost:8080/ERS/all')
             .map(Response => Response.json());
     }
-    
-
 }
