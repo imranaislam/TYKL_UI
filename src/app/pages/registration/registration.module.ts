@@ -1,5 +1,5 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { RegistrationComponent } from './registration.component';
@@ -9,10 +9,10 @@ import { routing } from './registration.routing';
   imports: [
     CommonModule,
     FormsModule,
-    routing
+    routing,
   ],
   declarations: [
-    RegistrationComponent
-  ]
+    RegistrationComponent,
+  ],
 })
 export class RegistrationModule {}
