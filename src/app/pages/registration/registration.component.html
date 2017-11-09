@@ -1,0 +1,63 @@
+<router-outlet></router-outlet>
+
+<div class="container">
+        <div class="row text-center">
+                <div class="col-sm-12">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h4 class="panel-title">Sign up for an account</h4>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form role="form" action="insertUserOrAdmin" method="post" modelAttribute="registration">
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                <input type="text" path="firstName" name="first_name" id="first_name" required="" class="form-control input-sm" placeholder="First Name">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="text" path="lastName" name="last_name" id="last_name" required="" class="form-control input-sm" placeholder="Last Name">
+			    					</div>
+			    				</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                    <input type="text" path="userName" name="userName" id="userName" required="" class="form-control input-sm" placeholder="Choose Username">
+                            </div>
+
+                            <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" path="password" name="password" id="password" required="" class="form-control input-sm" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" name="password_confirmation" id="password_confirmation" required="" class="form-control input-sm" placeholder="Confirm Password">
+                                        </div>
+                                    </div>
+                                </div>
+
+			    			<div class="form-group">
+			    				<input type="email" path="email" name="email" id="email" required="" class="form-control input-sm" placeholder="Email Address">
+			    			</div>
+
+                                    <h5>Select user type</h5>
+                                    <label class="radio-inline">
+                                      <input type="radio" path="roleId" name="survey" id="Radios1" value="100">
+                                      Admin
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" path="roleId" name="survey" id="Radios2" value="101">
+                                     User
+                                    </label>
+			    			
+			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    		
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>

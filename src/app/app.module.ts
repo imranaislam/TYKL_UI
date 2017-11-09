@@ -12,13 +12,14 @@ import { CoreModule } from './@core/core.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MyModalComponent } from './pages/addquiz/mymodal';
 
 @NgModule({
-  declarations: [AppComponent, MyModalComponent, LoginComponent ],
+  declarations: [AppComponent, MyModalComponent, LoginComponent, RegistrationComponent ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
