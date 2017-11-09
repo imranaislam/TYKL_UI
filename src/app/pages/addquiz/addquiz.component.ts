@@ -45,7 +45,8 @@ alert(x);
               this.http.post('http://localhost:8080/test-your-knowledge/add'
               , `quizName=${this.quizName}&q1=${this.q1}&q1a1=${this.q1a1}&q1a2=${this.q1a2}&q1a3=${this.q1a3}&q1a4=${this.q1a4}&radioQ1=${this.radioQ1}`, {headers: this.headers})
               .subscribe(
-                  data => console.log(data),
+                data => this.postData = JSON.stringify(data),
+                
                     
                       
               );
