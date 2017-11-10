@@ -18,29 +18,28 @@ export class RegistrationComponent implements OnInit {
 
     public constructor(private router: Router, private http: Http) {
         this.input = {
-            "firstName": "",
-            "lastName": "",
-            "userName": "",
-            "password": "",
-            "email": "",
-            "roleId": ""
+            'firstName': '',
+            'lastName': '',
+            'userName': '',
+            'password': '',
+            'email': '',
+            'roleId': '',
         };
     }
 
     public registrationSubmit(){
-        //console.log("Enter registrationSubmit");
+         //console.log("Enter registrationSubmit");
         if ( this.input.firstName && 
                 this.input.lastName && 
                 this.input.userName && 
                 this.input.roleId && 
                 this.input.email && 
                 this.input.password){
-            let headers = new Headers({ "content-type": "application/json" });
-            let options = new RequestOptions({ headers: headers});
-            this.http.post("http://localhost:8080/test-your-knowledge/insertUserOrAdmin", 
+            const headers = new Headers({ 'content-type': 'application/json' });
+            const options = new RequestOptions({ headers: headers});
+            this.http.post('http://localhost:8080/test-your-knowledge/insertUserOrAdmin', 
                 JSON.stringify(this.input), options)
             .subscribe(result => {
-                console.log(result);
                 this.router.navigate(['/auth/login']);
             });
         }
