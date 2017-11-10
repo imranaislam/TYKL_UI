@@ -28,17 +28,12 @@ export class LoginComponent implements OnInit {
             , `username=${this.username}&password=${this.password}`, { headers: this.headers })
             .subscribe(
             (data) => {
-                console.log(data);
-                console.log(data.status);
                 if (data.status === 200) {
                     this.userData = data.json();
                     // console.log(this.userData.userrole);
                     if (this.userData.userrole === 'sme') {
                         this.router.navigate(['pages/dashboard']);
-                    }
-                }
-                else {
-                    if (data.status === 400) {
+                    } else {
                         this.message = 'You are not a registered user.  Please register using "Register here" link above.';
                     }
                 }
@@ -50,5 +45,4 @@ export class LoginComponent implements OnInit {
             },
         );
     }
-
 }
