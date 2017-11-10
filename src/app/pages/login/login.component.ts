@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
     public password;
     public headers;
     public userData;
+    public message = '';
 
     public ngOnInit() {
     }
@@ -27,18 +28,21 @@ export class LoginComponent implements OnInit {
             , `username=${this.username}&password=${this.password}`, { headers: this.headers })
             .subscribe(
             (data) => {
-                this.userData = data.json();
-                // console.log(this.userData.userrole);
-                if (this.userData.userrole === 'sme') {
-                    this.router.navigate(['pages/dashboard']);
+                if (data.status === 200) {
+                    this.userData = data.json();
+                    // console.log(this.userData.userrole);
+                    if (this.userData.userrole === 'sme') {
+                        this.router.navigate(['pages/dashboard']);
+                    } else {
+                        this.message = 'You are not a registered user.  Please register using "Register here" link above.';
+                    }
                 }
             },
-            );
+            (error) => {
+                if (error.status === 400) {
+                    this.message = 'You are not a registered user.  Please register using "Register here" link above.';
+                }
+            },
+        );
     }
-
 }
-
-
-
-
-

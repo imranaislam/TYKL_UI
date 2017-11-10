@@ -1,13 +1,14 @@
 <div class="body">
 <!--<div class="grad"></div> -->
     <div class="header"> 
-        <div><br><span style="color: rgb(0, 255, 13)">TYK</span></div>
+        <div><br><span style="color: rgb(0, 255, 13)">T Y K L</span></div>
     </div>
     <br>
     <div class="login">
-        <input type="text" [(ngModel)]="username" placeholder="username" id="username" name="username"><br>
-        <input type="password" [(ngModel)]="password" placeholder="password" id="password" name="password"><br>
-        <input type="button" (click)="loginSubmit()" value="Login"><br>
-        <a href="#/auth/registration">New User Register here</a>
+        <input type="text" [(ngModel)]="username" placeholder="Enter Username" id="username" name="username"><br>
+        <input type="password" [(ngModel)]="password" placeholder="Enter Password" id="password" name="password"><br>
+        <input type="button" (click)="loginSubmit()" value="Login"><br> <br>
+        <p>New User? <a href="#/auth/registration">Register here</a></p>
+        <span *ngIf=true>{{message}}</span>
     </div>
 </div>
