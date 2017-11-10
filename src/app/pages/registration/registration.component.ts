@@ -28,7 +28,7 @@ export class RegistrationComponent implements OnInit {
     }
 
     public registrationSubmit(){
-         //console.log("Enter registrationSubmit");
+         // console.log( "Enter registrationSubmit" );
         if ( this.input.firstName && 
                 this.input.lastName && 
                 this.input.userName && 
