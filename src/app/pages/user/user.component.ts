@@ -14,11 +14,30 @@ export class UserComponent implements OnInit {
     subjectArea: number;
     expertiseLevel: number;
     message: String;
+    subjectAreas: any;
 
     public ngOnInit() {
+        this.retrieveSubjectAreas();
     }
 
     constructor(private router: Router, private http: Http) {
+    }
+
+    public retrieveSubjectAreas() {
+        this.http.get('http://localhost:8080/test-your-knowledge/subjectareas')
+            .subscribe(
+            (subjectareas) => {
+                if (subjectareas.status === 200) {
+                    this.subjectAreas = subjectareas.json();
+                    console.log(this.subjectAreas);
+                }
+            },
+            (error) => {
+                if (error.status === 400) {
+                    console.log("failed to retrieve subjectareas");
+                }
+            },
+        );
     }
 
     public viewQuestions() {
