@@ -9,11 +9,11 @@ import { PagesRoutingModule } from '../pages-routing.module';
     styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-    public username;
-    public password;
-    public headers;
-    public userData;
-    public message = '';
+    username: String;
+    password: String;
+    headers: any;
+    userData: any;
+    message: String = '';
 
     public ngOnInit() {
     }
