@@ -1,0 +1,39 @@
+<div>
+    <div class="header">
+        <br>
+        <H3 class=header>Welcome to America's Premier Testing site</H3>
+    </div>
+
+    <div class="body">
+        <p>We are happy to provide you a platform where you can verify your knowledge level in various subject areas and master
+            them.
+        </p>
+        <p>Our Subject Matter Experts (SMEs) are always working on creating new challenges to help you assess your skill levels.</p>
+        <p>Please select one of the available subject areas and expertise level to begin.</p>
+    </div>
+
+    <div class="subject">
+        <p>
+            <strong>Subject Area: </strong>
+            <select>
+                <option value="java">Technology: Core Java</option>
+                <option value="angular">Technology: Angular</option>
+                <option value="movies">Art: Movie Production</option>
+                <option value="american">Cooking: American Cuisine</option>
+                <option value="italian">Cooking: Italian Cuisine</option>
+            </select>
+        </p>
+    </div>
+    <div class="skill">
+        <p>
+            <strong>Expertise Level: </strong>
+            <select>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="master">Master</option>
+            </select>
+        </p>
+    </div>
+    <button (click)="viewQuestions()" class="btn btn-success">View Questions</button>
+    <p>{{message}}</p>
+</div>

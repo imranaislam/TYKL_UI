@@ -2,9 +2,18 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
-  @include media-breakpoint-down(is) {
-    /deep/ nb-card.large-card {
-      height: nb-theme(card-height-medium);
-    }
+@include media-breakpoint-down(is) {
+  /deep/ nb-card.large-card {
+    height: nb-theme(card-height-medium);
   }
+}
 
+h3 {
+  padding-top: 1 cm;
+  text-align: center;
+  padding-bottom: 1 cm;
+}
+
+p {
+  text-indent: 50px;
+}
