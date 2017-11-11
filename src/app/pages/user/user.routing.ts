@@ -5,8 +5,8 @@ import { UserComponent } from './user.component';
 const routes: Routes = [
   {
     path: '',
-    component: UserComponent
-  }
+    component: UserComponent,
+  },
 ];
 
 export const routing = RouterModule.forChild(routes);
