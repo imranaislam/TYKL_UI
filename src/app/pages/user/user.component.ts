@@ -31,7 +31,7 @@ export class UserComponent implements OnInit {
             (subjectareas) => {
                 if (subjectareas.status === 200) {
                     this.subjectAreas = subjectareas.json();
-                    // console.log(this.subjectAreas);
+                    // console.log(this.subjectAreas[0].quiz_subject_area);
                 }
             },
             (error) => {
@@ -48,7 +48,7 @@ export class UserComponent implements OnInit {
             (questionComplexityList) => {
                 if (questionComplexityList.status === 200) {
                     this.questionComplexityList = questionComplexityList.json();
-                    // console.log(this.questionComplexityList);
+                    // console.log(this.questionComplexityList[0].question_complexity_level_description);
                 }
             },
             (error) => {
@@ -72,7 +72,7 @@ export class UserComponent implements OnInit {
             },
             (error) => {
                 if (error.status === 400) {
-                    this.router.navigate(['pages/takequiz']);
+                    // this.router.navigate(['pages/takequiz']);
                     this.message = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
                 }
             },

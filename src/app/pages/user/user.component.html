@@ -12,25 +12,18 @@
         <p>Please select one of the available subject areas and expertise level to begin.</p>
     </div>
 
-    <div class="subject">
-        <p>
-            <strong>Subject Area: </strong>
-            <select>
-                <option value="java">Technology: Core Java</option>
-                <option value="angular">Technology: Angular</option>
-                <option value="movies">Art: Movie Production</option>
-                <option value="american">Cooking: American Cuisine</option>
-                <option value="italian">Cooking: Italian Cuisine</option>
-            </select>
-        </p>
+    <div class="subjectArea">
+        <strong>Subject Area: </strong>
+        <select>
+            <option *ngFor="let subjectArea of subjectAreas">{{subjectArea.quiz_subject_area}}</option>
+        </select>
     </div>
-    <div class="skill">
+
+    <div class="questionComplexity">
         <p>
             <strong>Expertise Level: </strong>
             <select>
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="master">Master</option>
+                <option *ngFor="let questionComplexity of questionComplexityList">{{questionComplexity.question_complexity_level_description}}</option>
             </select>
         </p>
     </div>
