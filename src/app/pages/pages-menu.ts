@@ -12,7 +12,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Quizzes',
+    title: 'Quizz SME',
     icon: 'nb-keypad',
     children: [
       {
@@ -30,6 +30,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Delete an existing Quiz',
         link: '/pages/deletequiz',
+      },
+    ],
+  },
+  {
+    title: 'Quizz User',
+    icon: 'nb-keypad',
+    children: [
+      {
+        title: 'View available Quizzes',
+        link: '/pages/user',
       },
       {
         title: 'Take a Quiz',

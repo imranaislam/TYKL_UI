@@ -25,6 +25,9 @@ const routes: Routes = [{
   },  {
     path: 'takequiz',
     loadChildren: './takequiz/takequiz.module#TakeQuizModule',
+  },  {
+    path: 'user',
+    loadChildren: './user/user.module#UserModule',
   }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',

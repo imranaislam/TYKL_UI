@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
                     // console.log(this.userData.userrole);
                     if (this.userData.userrole === 'sme') {
                         this.router.navigate(['pages/dashboard']);
+                    } if (this.userData.userrole === 'user') {
+                        this.router.navigate(['pages/user']);
                     } else {
                         this.message = 'You are not a registered user.  Please register using "Register here" link above.';
                     }
