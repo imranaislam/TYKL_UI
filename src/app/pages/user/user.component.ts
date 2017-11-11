@@ -15,9 +15,11 @@ export class UserComponent implements OnInit {
     expertiseLevel: number;
     message: String;
     subjectAreas: any;
+    questionComplexityList: any;
 
     public ngOnInit() {
         this.retrieveSubjectAreas();
+        this.retrieveQuestionComplexityList();
     }
 
     constructor(private router: Router, private http: Http) {
@@ -29,10 +31,29 @@ export class UserComponent implements OnInit {
             (subjectareas) => {
                 if (subjectareas.status === 200) {
                     this.subjectAreas = subjectareas.json();
+                    // console.log(this.subjectAreas);
                 }
             },
             (error) => {
                 if (error.status === 400) {
+                    this.message = 'Our Application experienced an issue.  Please try again.';
+                }
+            },
+        );
+    }
+
+    public retrieveQuestionComplexityList() {
+        this.http.get('http://localhost:8080/test-your-knowledge/questioncomplexitylist')
+            .subscribe(
+            (questionComplexityList) => {
+                if (questionComplexityList.status === 200) {
+                    this.questionComplexityList = questionComplexityList.json();
+                    // console.log(this.questionComplexityList);
+                }
+            },
+            (error) => {
+                if (error.status === 400) {
+                    this.message = 'Our Application experienced an issue.  Please try again.';
                 }
             },
         );
