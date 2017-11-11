@@ -29,12 +29,10 @@ export class UserComponent implements OnInit {
             (subjectareas) => {
                 if (subjectareas.status === 200) {
                     this.subjectAreas = subjectareas.json();
-                    console.log(this.subjectAreas);
                 }
             },
             (error) => {
                 if (error.status === 400) {
-                    console.log("failed to retrieve subjectareas");
                 }
             },
         );
