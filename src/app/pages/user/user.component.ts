@@ -60,12 +60,12 @@ export class UserComponent implements OnInit {
     }
 
     public viewQuestions() {
-        console.log("Retrieving Question and Answers");
+        // console.log('Retrieving Question and Answers');
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        console.log(this.headers);
-        console.log('subject ' + this.subjectArea);
-        console.log('expertiseLevel ' + this.expertiseLevel);
+        // console.log(this.headers);
+        // console.log('subject ' + this.subjectArea);
+        // console.log('expertiseLevel ' + this.expertiseLevel);
         this.http.post('http://localhost:8080/test-your-knowledge/takequiz'
             , `subjectArea=${1}&expertiseLevel=${1}`, { headers: this.headers })
             // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
@@ -73,7 +73,7 @@ export class UserComponent implements OnInit {
             (questions) => {
                 if (questions.status === 200) {
                     this.router.navigate(['pages/takequiz']);
-                    console.log(questions);
+                    // console.log(questions);
                 }
             },
             (error) => {
