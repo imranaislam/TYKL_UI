@@ -20,12 +20,10 @@
     </div>
 
     <div class="questionComplexity">
-        <p>
             <strong>Expertise Level: </strong>
             <select>
                 <option *ngFor="let questionComplexity of questionComplexityList">{{questionComplexity.question_complexity_level_description}}</option>
             </select>
-        </p>
     </div>
     <button (click)="viewQuestions()" class="btn btn-success">View Questions</button>
     <p>{{message}}</p>
