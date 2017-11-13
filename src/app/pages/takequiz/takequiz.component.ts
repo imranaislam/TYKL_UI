@@ -1,33 +1,48 @@
-import { Component } from '@angular/core';
- import { HTTPTestService } from '../../@core/utils/http.component';
+import { Component, OnInit } from '@angular/core';
+import { Http, Headers } from '@angular/http';
+import { Router } from '@angular/router';
+import { PagesRoutingModule } from '../pages-routing.module';
 
 @Component({
-  selector: 'ngx-take-quiz',
-  template: `<script src="https://code.angularjs.org/2.0.0-beta.0/http.dev.js"></script>
-            <strong>Test Yourself: Take a Quiz</strong>
-            <button (click)="onTestGet()">Test GET</button>
-            <p>Output: {{getData}}</p>
-            <button>Test POST</button>
-            <p>Output: {{postData}}</p>
-  
-  `,
-    providers: [HTTPTestService],
+  selector: 'ngx-takequiz',
+  template: './takequiz.component.html',
+  styleUrls: ['./takequiz.component.css'],
 })
-export class TakeQuizComponent {
-   constructor(private httpServiceVar: HTTPTestService) {}
+export class TakeQuizComponent implements OnInit {
 
-  getData: string;
-  postData: string;
+  message: String;
+  headers: any;
+  subjectArea: number;
+  expertiseLevel: number;
 
-  onTestGet() {
-    // alert('got here');
-    this.httpServiceVar.getCurrentTime()
-      .subscribe (
-      data => this.getData = JSON.stringify(data),
-        Error => alert(Error),
-       );
+  constructor(private router: Router, private http: Http) {
+  }
 
-  } 
+  public ngOnInit() {
+    this.retrieveQuestions();
+  }
 
-    
+  public retrieveQuestions() {
+    // console.log('Retrieving Question and Answers');
+    this.headers = new Headers();
+    this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    // console.log(this.headers);
+    // console.log('subject ' + this.subjectArea);
+    // console.log('expertiseLevel ' + this.expertiseLevel);
+    this.http.post('http://localhost:8080/test-your-knowledge/takequiz'
+      , `subjectArea=${1}&expertiseLevel=${1}`, { headers: this.headers })
+      // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
+      .subscribe(
+      (questions) => {
+        if (questions.status === 200) {
+          console.log(questions);
+        }
+      },
+      (error) => {
+        if (error.status === 400) {
+          this.message = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
+        }
+      },
+    );
+  }
 }

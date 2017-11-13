@@ -13,9 +13,9 @@ export class UserComponent implements OnInit {
     subjectAreas: any;
     questionComplexityList: any;
     message: String;
-    headers: any;
-    subjectArea: number;
-    expertiseLevel: number;
+    // headers: any;
+    // subjectArea: number;
+    // expertiseLevel: number;
 
     public ngOnInit() {
         this.retrieveSubjectAreas();
@@ -31,6 +31,7 @@ export class UserComponent implements OnInit {
             (subjectareas) => {
                 if (subjectareas.status === 200) {
                     this.subjectAreas = subjectareas.json();
+                    // console.log(this.subjectAreas[0]);
                     // console.log(this.subjectAreas[0].quiz_subject_area);
                 }
             },
@@ -48,6 +49,7 @@ export class UserComponent implements OnInit {
             (questionComplexityList) => {
                 if (questionComplexityList.status === 200) {
                     this.questionComplexityList = questionComplexityList.json();
+                    // console.log(this.questionComplexityList[0]);
                     // console.log(this.questionComplexityList[0].question_complexity_level_description);
                 }
             },
@@ -59,29 +61,34 @@ export class UserComponent implements OnInit {
         );
     }
 
+
     public viewQuestions() {
-        // console.log('Retrieving Question and Answers');
-        this.headers = new Headers();
-        this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        // console.log(this.headers);
-        // console.log('subject ' + this.subjectArea);
-        // console.log('expertiseLevel ' + this.expertiseLevel);
-        this.http.post('http://localhost:8080/test-your-knowledge/takequiz'
-            , `subjectArea=${1}&expertiseLevel=${1}`, { headers: this.headers })
-            // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
-            .subscribe(
-            (questions) => {
-                if (questions.status === 200) {
-                    this.router.navigate(['pages/takequiz']);
-                    // console.log(questions);
-                }
-            },
-            (error) => {
-                if (error.status === 400) {
-                    // this.router.navigate(['pages/takequiz']);
-                    this.message = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
-                }
-            },
-        );
+        this.router.navigate(['pages/takequiz']);
     }
+
+    // public viewQuestions() {
+    //     console.log('Retrieving Question and Answers');
+    //     this.headers = new Headers();
+    //     this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    //     console.log(this.headers);
+    //     console.log('subject ' + this.subjectArea);
+    //     console.log('expertiseLevel ' + this.expertiseLevel);
+    //     this.http.post('http://localhost:8080/test-your-knowledge/takequiz'
+    //         , `subjectArea=${1}&expertiseLevel=${1}`, { headers: this.headers })
+    //         // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
+    //         .subscribe(
+    //         (questions) => {
+    //             if (questions.status === 200) {
+    //                 this.router.navigate(['pages/takequiz']);
+    //                 // console.log(questions);
+    //             }
+    //         },
+    //         (error) => {
+    //             if (error.status === 400) {
+    //                 // this.router.navigate(['pages/takequiz']);
+    //                 this.message = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
+    //             }
+    //         },
+    //     );
+    // }
 }
