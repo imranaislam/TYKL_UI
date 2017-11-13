@@ -1,3 +1,33 @@
-<div class="input-group">
-    <input type="text" placeholder="View Quiz Name" class="form-control"/>
-  </div><br>
+
+
+<br><br>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">List of your previously created knowledge Testers</h4>
+            </div>
+            <br><br>
+            <div class="panel-body" >
+                <!-- <form style="background-color:rgb(186, 229, 236)" role="form" class="col-sm-5"> -->
+                    <table border="1" class="allrequests-table">
+                        <thead>
+                          <th width="30%">Category</th>
+                          <th width="70%">title</th>
+                        </thead>    
+                        <tbody *ngFor="let quiz of quizList " >
+                          <tr>
+                            <th>{{quiz.quiz_subject_area}}</th>
+                            <th>{{quiz.quiz_description}}</th>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
