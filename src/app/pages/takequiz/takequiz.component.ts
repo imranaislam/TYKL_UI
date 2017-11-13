@@ -35,7 +35,7 @@ export class TakeQuizComponent implements OnInit {
       .subscribe(
       (questions) => {
         if (questions.status === 200) {
-          console.log(questions);
+          // console.log(questions);
         }
       },
       (error) => {
