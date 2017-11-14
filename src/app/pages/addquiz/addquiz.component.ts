@@ -97,29 +97,29 @@ export class AddQuizComponent implements OnInit {
             public addQuizSubmit(){
 
 
-                var e = (document.getElementById("subjectDrop")) as HTMLSelectElement;
-                var sel = e.selectedIndex;
+                let e = (document.getElementById('subjectDrop')) as HTMLSelectElement;
+                let sel = e.selectedIndex;
               
-                var complex = (document.getElementById("complexDrop")) as HTMLSelectElement;
-                var complexVal = complex.selectedIndex;
+                let complex = (document.getElementById('complexDrop')) as HTMLSelectElement;
+                let complexVal = complex.selectedIndex;
 
-                var quest = (document.getElementById("q")) as HTMLInputElement;
-                var questVal = quest.value;
+                let quest = (document.getElementById('q')) as HTMLInputElement;
+                let questVal = quest.value;
 
-                var a1 = (document.getElementById("a1")) as HTMLInputElement;
-                var a1Val = a1.value;
+                let a1 = (document.getElementById('a1')) as HTMLInputElement;
+                let a1Val = a1.value;
 
-                var a2 = (document.getElementById("a2")) as HTMLInputElement;
-                var a2Val = a2.value;
+                let a2 = (document.getElementById('a2')) as HTMLInputElement;
+                let a2Val = a2.value;
 
-                var a3 = (document.getElementById("a3")) as HTMLInputElement;
-                var a3Val = a3.value;
+                let a3 = (document.getElementById('a3')) as HTMLInputElement;
+                let a3Val = a3.value;
 
-                var a4 = (document.getElementById("a4")) as HTMLInputElement;
-                var a4Val = a4.value;
+                let a4 = (document.getElementById('a4')) as HTMLInputElement;
+                let a4Val = a4.value;
 
-                var res = (document.getElementById("radioQ1")) as HTMLInputElement;
-                var resVal = res.checked;
+                let res = (document.getElementById('radioQ1')) as HTMLInputElement;
+                let resVal = res.checked;
 
                 if (sel < 0){
                     this.validationSubject = 'Must choose a Subject';
