@@ -37,7 +37,7 @@ export class TakeQuizComponent implements OnInit {
             (questionanswers) => {
                 if (questionanswers.status === 200) {
                     this.router.navigate(['pages/takequiz']);
-                    console.log(questionanswers);
+                    // console.log(questionanswers);
 
                     this.questionanswers = questionanswers.json();
                 }
