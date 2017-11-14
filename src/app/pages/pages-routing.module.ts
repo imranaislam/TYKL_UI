@@ -20,6 +20,9 @@ const routes: Routes = [{
     path: 'viewquiz',
     loadChildren: './viewquiz/viewquiz.module#ViewQuizModule',
   }, {
+    path: 'updatequiz',
+    loadChildren: './updatequiz/updatequiz.module#UpdateQuizModule',
+  }, {
     path: 'addquiz',
     loadChildren: './addquiz/addquiz.module#AddQuizModule',
   },  {
