@@ -13,7 +13,7 @@ export class PagesComponent implements OnInit {
   
   public ngOnInit() {
 
-    this.userString =localStorage.getItem ('theUser'); 
+    this.userString = localStorage.getItem ('theUser'); 
     if (this.userString === 'sme') {
       this.usertype = true;
     } else {

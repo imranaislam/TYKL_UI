@@ -67,7 +67,7 @@ export class UserComponent implements OnInit {
 
     public viewQuestions() {
         // console.log('Retrieving Question and Answers');
-        alert(this.subjectDrop);
+        // alert(this.subjectDrop);
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
         // console.log(this.headers);
@@ -81,7 +81,7 @@ export class UserComponent implements OnInit {
                 if (questions.status === 200) {
 
                     this.questionReturn = questions.json();
-                    console.log(this.questionReturn);
+                    // console.log(this.questionReturn);
 
                     this.router.navigate(['pages/takequiz']);
                     // console.log(questions);
