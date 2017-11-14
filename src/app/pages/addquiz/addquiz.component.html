@@ -7,15 +7,15 @@
     <select [(ngModel)]="subjectDrop" id="subjectDrop" name="subjectDrop" required class="form-control col-md-8">
             <option value="" disabled selected>Select Subject Area</option>    
         <option *ngFor="let subjectArea of subjectAreas" value="{{subjectArea.quiz_id}}">{{subjectArea.quiz_subject_area}}</option>
-        </select>
+        </select><span style="color: red">{{validationSubject}}</span>
 
 </td><td>
     
     <label for="complex">Complexity:</label>
-    <select id="complexDrop" name="complexDrop" [(ngModel)]="complexDrop" required class="form-control col-md-8" id="complexity" name="complexity">
+    <select id="complexDrop" name="complexDrop" [(ngModel)]="complexDrop" required class="form-control col-md-8">
             <option value="" disabled selected>Select Complexity</option>     
         <option *ngFor="let questionComplexity of questionComplexityList" value="{{questionComplexity.question_complexity_id}}">{{questionComplexity.question_complexity_level_description}}</option> 
-          </select>
+          </select><span style="color: red">{{validationComplex}}</span>
           </td></tr>
 </table>
   </div>
@@ -25,6 +25,7 @@
   
   <div class="input-group">
     <input type="text" id="q" name="q" [(ngModel)]="q" required placeholder="Enter First Question" class="form-control offset-md-1 col-md-6"/>
+    <br>&nbsp;<span style="color: red">{{validationQuestion}}</span>
   </div>
 <br>
   <div class="panel panel-default">
@@ -77,6 +78,7 @@
        </td>
     </tr>
     <tr>&nbsp;</tr>
+    <tr><td><span style="color: red">{{validationAnswer}}&nbsp;&nbsp;<td>{{validationResult}}</span></td></tr>
   </table>
   </div>
 
