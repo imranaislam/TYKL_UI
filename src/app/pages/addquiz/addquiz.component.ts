@@ -131,13 +131,13 @@ export class AddQuizComponent implements OnInit {
                     return;
                 }
 
-                if (questVal === ""){
+                if (questVal === ''){
                     // alert('You must specify a question');
                     this.validationQuestion = 'Must Enter a Question';
                     return;
                 }
 
-                if (a1Val === "" || a2Val === "" || a3Val === "" || a4Val === "" ){
+                if (a1Val === '' || a2Val === '' || a3Val === '' || a4Val === '' ){
                    // alert('Please complete All Answer Fields');
                    this.validationAnswer = 'Must Complete All Answers';
                     return;
