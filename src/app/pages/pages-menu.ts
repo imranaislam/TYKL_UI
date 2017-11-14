@@ -12,7 +12,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Quizz SME',
+    title: 'Quiz SME',
     icon: 'nb-keypad',
     children: [
       {
@@ -34,7 +34,35 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Quizz User',
+    title: 'Auth',
+    icon: 'nb-locked',
+    children: [
+      {
+        title: 'Reset Password',
+        link: '/auth/reset-password',
+      },
+      {
+        title: 'Logout',
+        link: '/auth/login',
+      },
+
+    ],
+  },
+];
+
+export const USER_MENU_ITEMS: NbMenuItem[] = [
+  {
+    title: 'Home',
+    icon: 'nb-home',
+    link: '/pages/dashboard',
+    home: true,
+  },
+  {
+    title: 'FEATURES',
+    group: true,
+  },
+  {
+    title: 'Quiz User',
     icon: 'nb-keypad',
     children: [
       {

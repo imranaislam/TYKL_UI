@@ -17,6 +17,11 @@ export class UserComponent implements OnInit {
     subjectArea: number;
     expertiseLevel: number;
 
+    public subjectDrop;
+    public complexDrop;
+    
+    public questionReturn;
+
     public ngOnInit() {
         this.retrieveSubjectAreas();
         this.retrieveQuestionComplexityList();
@@ -43,6 +48,7 @@ export class UserComponent implements OnInit {
     }
 
     public retrieveQuestionComplexityList() {
+        alert(this.complexDrop);
         this.http.get('http://localhost:8080/test-your-knowledge/questioncomplexitylist')
             .subscribe(
             (questionComplexityList) => {
@@ -61,17 +67,22 @@ export class UserComponent implements OnInit {
 
     public viewQuestions() {
         // console.log('Retrieving Question and Answers');
+        alert(this.subjectDrop);
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
         // console.log(this.headers);
         // console.log('subject ' + this.subjectArea);
         // console.log('expertiseLevel ' + this.expertiseLevel);
         this.http.post('http://localhost:8080/test-your-knowledge/takequiz'
-            , `subjectArea=${1}&expertiseLevel=${1}`, { headers: this.headers })
+            , `subjectArea=${this.subjectDrop}&expertiseLevel=${this.complexDrop}`, { headers: this.headers })
             // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
             .subscribe(
             (questions) => {
                 if (questions.status === 200) {
+
+                    this.questionReturn = questions.json();
+                    console.log(this.questionReturn);
+
                     this.router.navigate(['pages/takequiz']);
                     // console.log(questions);
                 }

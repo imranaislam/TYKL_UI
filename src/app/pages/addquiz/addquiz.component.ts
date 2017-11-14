@@ -21,7 +21,13 @@ export class AddQuizComponent implements OnInit {
   public complexity;
   public radioQ1;
   public message;
-  public test;
+  subjectAreas: any;
+  questionComplexityList: any;
+  subjectArea: number;
+  expertiseLevel: number;
+
+  public subjectDrop;
+  public complexDrop;
 
   public headers;
 
@@ -29,7 +35,10 @@ export class AddQuizComponent implements OnInit {
   
   public ngOnInit() {
     document.getElementById('divq1').hidden = false;
-  }
+
+        this.retrieveSubjectAreas();
+        this.retrieveQuestionComplexityList();
+    }
 
   
   constructor(private router: Router, private http: Http) {}
@@ -44,6 +53,39 @@ export class AddQuizComponent implements OnInit {
               }
             }
 
+            public retrieveSubjectAreas() {
+              this.http.get('http://localhost:8080/test-your-knowledge/subjectareas')
+                  .subscribe(
+                  (subjectareas) => {
+                      if (subjectareas.status === 200) {
+                          this.subjectAreas = subjectareas.json();
+                          // console.log(this.subjectAreas[0].quiz_subject_area);
+                      }
+                  },
+                  (error) => {
+                      if (error.status === 400) {
+                          this.message = 'Our Application experienced an issue.  Please try again.';
+                      }
+                  },
+              );
+          }
+      
+          public retrieveQuestionComplexityList() {
+              this.http.get('http://localhost:8080/test-your-knowledge/questioncomplexitylist')
+                  .subscribe(
+                  (questionComplexityList) => {
+                      if (questionComplexityList.status === 200) {
+                          this.questionComplexityList = questionComplexityList.json();
+                          // console.log(this.questionComplexityList[0].question_complexity_level_description);
+                      }
+                  },
+                  (error) => {
+                      if (error.status === 400) {
+                          this.message = 'Our Application experienced an issue.  Please try again.';
+                      }
+                  },
+              );
+          }
             
 
             public addQuizSubmit(){
@@ -51,7 +93,7 @@ export class AddQuizComponent implements OnInit {
               this.headers = new Headers();
               this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
               this.http.post('http://localhost:8080/test-your-knowledge/add'
-              , `q=${this.q}&subject=${this.subject}&complexity=${this.complexity}&a1=${this.a1}&a2=${this.a2}&a3=${this.a3}&a4=${this.a4}&result=${this.radioQ1}`, {headers: this.headers})
+              , `q=${this.q}&subject=${this.subjectDrop}&complexity=${this.complexDrop}&a1=${this.a1}&a2=${this.a2}&a3=${this.a3}&a4=${this.a4}&result=${this.radioQ1}`, {headers: this.headers})
               .subscribe(
                 (data) => {
                   if (data.status === 200){
