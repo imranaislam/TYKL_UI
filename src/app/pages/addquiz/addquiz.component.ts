@@ -98,28 +98,28 @@ export class AddQuizComponent implements OnInit {
 
 
                 const e = (document.getElementById('subjectDrop')) as HTMLSelectElement;
-                let sel = e.selectedIndex;
+                const sel = e.selectedIndex;
               
                 const complex = (document.getElementById('complexDrop')) as HTMLSelectElement;
-                let complexVal = complex.selectedIndex;
+                const complexVal = complex.selectedIndex;
 
                 const quest = (document.getElementById('q')) as HTMLInputElement;
-                let questVal = quest.value;
+                const questVal = quest.value;
 
                 const a1 = (document.getElementById('a1')) as HTMLInputElement;
-                let a1Val = a1.value;
+                const a1Val = a1.value;
 
                 const a2 = (document.getElementById('a2')) as HTMLInputElement;
-                let a2Val = a2.value;
+                const a2Val = a2.value;
 
                 const a3 = (document.getElementById('a3')) as HTMLInputElement;
-                let a3Val = a3.value;
+                const a3Val = a3.value;
 
                 const a4 = (document.getElementById('a4')) as HTMLInputElement;
-                let a4Val = a4.value;
+                const a4Val = a4.value;
 
                 const res = (document.getElementById('radioQ1')) as HTMLInputElement;
-                let resVal = res.checked;
+                const resVal = res.checked;
 
                 if (sel < 0){
                     this.validationSubject = 'Must choose a Subject';
