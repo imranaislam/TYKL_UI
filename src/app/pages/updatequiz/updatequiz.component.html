@@ -1,5 +1,3 @@
-
-
 <br><br>
 <div class="container">
     <div class="row text-center">
@@ -12,15 +10,14 @@
             <div class="panel-body" >
                     <table border="1" class="allrequests-table">
                         <thead>
-                          <th width="20%">Category</th>
-                          <th width="60%">title</th>
-                          <th width="20%">Action</th>
+                          <th width="30%">Questio ID</th>
+                          <th width="70%">Question</th>
+                          
                         </thead>    
-                        <tbody *ngFor="let quiz of quizList ">
+                    <tbody *ngFor="let questions of questionList " >
                           <tr>
-                            <td>{{quiz.quiz_subject_area}}</td>
-                            <td>{{quiz.quiz_description}}</td>
-                            <td><button class="w3-button w3-border w3-small" (click)="retrieveQuestions(quiz.quiz_id)">Questions</button></td>
+                            <td>{{questions.question_id}}</td>
+                            <td>{{questions.question_text}}</td>
                           </tr>
                         </tbody>
                     </table>

@@ -24,8 +24,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/addquiz',
       },
       {
-        title: 'Edit an existing Quiz',
-        link: '/pages/editquiz',
+        title: 'Update an existing Quiz',
+        link: '/pages/updatequiz',
       },
       {
         title: 'Delete an existing Quiz',
