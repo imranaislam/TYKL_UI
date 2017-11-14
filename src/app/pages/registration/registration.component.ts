@@ -38,7 +38,7 @@ export class RegistrationComponent implements OnInit {
          const fName = (document.getElementById('firstName')) as HTMLInputElement;
          const fNameVal = fName.value;
 
-         if (fNameVal === ""){
+         if (fNameVal === ''){
              this.validateFirstName = 'Please Enter First Name';
              return;
          }
@@ -46,7 +46,7 @@ export class RegistrationComponent implements OnInit {
          const lName = (document.getElementById('lastName')) as HTMLInputElement;
          const lNameVal = lName.value;
 
-         if (lNameVal === ""){
+         if (lNameVal === ''){
              this.validateLastName = 'Please Enter Last Name';
              return;
          }
@@ -54,7 +54,7 @@ export class RegistrationComponent implements OnInit {
          const uName = (document.getElementById('userName')) as HTMLInputElement;
          const uNameVal = uName.value;
 
-         if (uNameVal === ""){
+         if (uNameVal === ''){
              this.validateUsername = 'Please Enter User Name';
              return;
          }
@@ -62,7 +62,7 @@ export class RegistrationComponent implements OnInit {
          const password = (document.getElementById('password')) as HTMLInputElement;
          const passwordVal = password.value;
 
-         if (passwordVal === ""){
+         if (passwordVal === ''){
              this.validatePassword = 'Please Enter Password';
              return;
          }
@@ -70,7 +70,7 @@ export class RegistrationComponent implements OnInit {
          const confirmpwd = (document.getElementById('passwordconfirmation')) as HTMLInputElement;
          const confirmPwdVal = confirmpwd.value;
 
-         if (confirmPwdVal === ""){
+         if (confirmPwdVal === ''){
              this.validateConfirmPwd = 'Please Re-enter Password';
              return;
          }
@@ -78,7 +78,7 @@ export class RegistrationComponent implements OnInit {
          const email = (document.getElementById('email')) as HTMLInputElement;
          const emailVal = email.value;
 
-         if (emailVal === ""){
+         if (emailVal === ''){
             this.validationEmail = 'Please Enter email address';
             return;
         }
