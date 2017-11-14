@@ -36,7 +36,7 @@ public retrieveQuestions() {
            // alert('got here');
             this.router.navigate(['pages/updatequiz']);
           // console.log(questions);          
-          //console.log(questions);
+          // console.log(questions);
         }
        // alert('got here 2');
       },
