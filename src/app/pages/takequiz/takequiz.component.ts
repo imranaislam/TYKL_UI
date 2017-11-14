@@ -26,23 +26,24 @@ export class TakeQuizComponent implements OnInit {
     // console.log('Retrieving Question and Answers');
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    // console.log(this.headers);
-    // console.log('subject ' + this.subjectArea);
-    // console.log('expertiseLevel ' + this.expertiseLevel);
+    // console.log('subject ' + (<HTMLInputElement>document.getElementById('subjectAreaSelection')).value);
+    // console.log('expertiseLevel ' + (<HTMLInputElement>document.getElementById('questionComplexitySelection')).value);
     this.http.post('http://localhost:8080/test-your-knowledge/takequiz'
-      , `subjectArea=${1}&expertiseLevel=${1}`, { headers: this.headers })
-      // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
-      .subscribe(
-      (questions) => {
-        if (questions.status === 200) {
-          // console.log(questions);
-        }
-      },
-      (error) => {
-        if (error.status === 400) {
-          this.message = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
-        }
-      },
+        , `subjectArea=${(<HTMLInputElement>document.getElementById('subjectAreaSelection')).value}&expertiseLevel=${(<HTMLInputElement>document.getElementById('questionComplexitySelection')).value}`, { headers: this.headers })
+        // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
+        .subscribe(
+        (questions) => {
+            if (questions.status === 200) {
+                this.router.navigate(['pages/takequiz']);
+                // console.log(questions);
+            }
+        },
+        (error) => {
+            if (error.status === 400) {
+                // this.router.navigate(['pages/takequiz']);
+                this.message = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
+            }
+        },
     );
   }
 }
