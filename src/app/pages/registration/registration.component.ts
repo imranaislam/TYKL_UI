@@ -12,6 +12,12 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 export class RegistrationComponent implements OnInit { 
 
     public input: any;
+    public validateFirstName;
+    public validateLastName;
+    public validateUsername;
+    public validatePassword;
+    public validateConfirmPwd;
+    public validationEmail;
 
     public ngOnInit(){
     }
@@ -29,6 +35,55 @@ export class RegistrationComponent implements OnInit {
 
     public registrationSubmit(){
          // console.log( "Enter registrationSubmit" );
+         var fName = (document.getElementById("firstName")) as HTMLInputElement;
+         var fNameVal = fName.value;
+
+         if (fNameVal === ""){
+             this.validateFirstName = 'Please Enter First Name';
+             return;
+         }
+
+         var lName = (document.getElementById("lastName")) as HTMLInputElement;
+         var lNameVal = lName.value;
+
+         if (lNameVal === ""){
+             this.validateLastName = 'Please Enter Last Name';
+             return;
+         }
+
+         var uName = (document.getElementById("userName")) as HTMLInputElement;
+         var uNameVal = uName.value;
+
+         if (uNameVal === ""){
+             this.validateUsername = 'Please Enter User Name';
+             return;
+         }
+
+         var password = (document.getElementById("password")) as HTMLInputElement;
+         var passwordVal = password.value;
+
+         if (passwordVal === ""){
+             this.validatePassword = 'Please Enter Password';
+             return;
+         }
+
+         var confirmpwd = (document.getElementById("passwordconfirmation")) as HTMLInputElement;
+         var confirmPwdVal = confirmpwd.value;
+
+         if (confirmPwdVal === ""){
+             this.validateConfirmPwd = 'Please Re-enter Password';
+             return;
+         }
+
+         var email = (document.getElementById("email")) as HTMLInputElement;
+         var emailVal = email.value;
+
+         if (emailVal === ""){
+            this.validationEmail = 'Please Enter email address';
+            return;
+        }
+        
+
         if ( this.input.firstName && 
                 this.input.lastName && 
                 this.input.userName && 
