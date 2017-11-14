@@ -2,14 +2,17 @@
       <div class="header">
             <H3 class=header>Following Questionnaire is prepared based on your selection</H3>
       </div>
+      <br>
+      <br>
+      <div class="panel-body">
+            <table>
 
-      <div class="body">
-
-            <div class="questions">
-                  <Input type=text *ngFor="let question of questions">{{question.question_text}}</option>
-            </div>
-
-            <button (click)="validateResponses()" class="btn btn-success">Validate Responses</button>
-            <p>{{message}}</p>
+                  <tbody>
+                        <tr *ngFor="let questionanswer of questionanswers">{{questionanswers.question_text}}</tr>
+                        <!-- <br>
+                        <td>{{questionanswers.answer_option_text}}</td> -->
+                  </tbody>
+            </table>
+            <br>
       </div>
 </div>
