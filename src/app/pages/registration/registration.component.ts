@@ -35,54 +35,54 @@ export class RegistrationComponent implements OnInit {
 
     public registrationSubmit(){
          // console.log( "Enter registrationSubmit" );
-         var fName = (document.getElementById("firstName")) as HTMLInputElement;
-         var fNameVal = fName.value;
+         const fName = (document.getElementById('firstName')) as HTMLInputElement;
+         const fNameVal = fName.value;
 
          if (fNameVal === ""){
              this.validateFirstName = 'Please Enter First Name';
              return;
          }
 
-         var lName = (document.getElementById("lastName")) as HTMLInputElement;
-         var lNameVal = lName.value;
+         const lName = (document.getElementById('lastName')) as HTMLInputElement;
+         const lNameVal = lName.value;
 
          if (lNameVal === ""){
              this.validateLastName = 'Please Enter Last Name';
              return;
          }
 
-         var uName = (document.getElementById("userName")) as HTMLInputElement;
-         var uNameVal = uName.value;
+         const uName = (document.getElementById('userName')) as HTMLInputElement;
+         const uNameVal = uName.value;
 
          if (uNameVal === ""){
              this.validateUsername = 'Please Enter User Name';
              return;
          }
 
-         var password = (document.getElementById("password")) as HTMLInputElement;
-         var passwordVal = password.value;
+         const password = (document.getElementById('password')) as HTMLInputElement;
+         const passwordVal = password.value;
 
          if (passwordVal === ""){
              this.validatePassword = 'Please Enter Password';
              return;
          }
 
-         var confirmpwd = (document.getElementById("passwordconfirmation")) as HTMLInputElement;
-         var confirmPwdVal = confirmpwd.value;
+         const confirmpwd = (document.getElementById('passwordconfirmation')) as HTMLInputElement;
+         const confirmPwdVal = confirmpwd.value;
 
          if (confirmPwdVal === ""){
              this.validateConfirmPwd = 'Please Re-enter Password';
              return;
          }
 
-         var email = (document.getElementById("email")) as HTMLInputElement;
-         var emailVal = email.value;
+         const email = (document.getElementById('email')) as HTMLInputElement;
+         const emailVal = email.value;
 
          if (emailVal === ""){
             this.validationEmail = 'Please Enter email address';
             return;
         }
-        
+
 
         if ( this.input.firstName && 
                 this.input.lastName && 
