@@ -13,9 +13,9 @@ export class UserComponent implements OnInit {
     subjectAreas: any;
     questionComplexityList: any;
     message: String;
-    // headers: any;
-    // subjectArea: number;
-    // expertiseLevel: number;
+    headers: any;
+    subjectArea: number;
+    expertiseLevel: number;
 
     public subjectDrop;
     public complexDrop;
