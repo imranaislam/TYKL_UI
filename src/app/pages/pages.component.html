@@ -1,0 +1,9 @@
+<ngx-sample-layout>
+
+        <nb-menu *ngIf="usertype; else elseblock" [items]="menu"></nb-menu>
+       <ng-template #elseblock>
+        <nb-menu [items]="menub"></nb-menu></ng-template>
+   
+        <router-outlet></router-outlet>
+      </ngx-sample-layout>
+    

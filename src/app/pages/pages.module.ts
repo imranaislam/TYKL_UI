@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';

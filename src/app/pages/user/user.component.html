@@ -1,4 +1,4 @@
-<div>
+<!--<div>
     <div class="header">
         <br>
         <H3 class=header>Welcome to America's Premier Testing site</H3>
@@ -14,9 +14,12 @@
 
     <div class="subjectArea">
         <strong>Subject Area: </strong>
+
+
         <select type="text" [(ngModel)]="subjectAreas.quiz_id">
             <option *ngFor="let subjectArea of subjectAreas" [ngValue]="subjectArea.quiz_id">{{subjectArea.quiz_subject_area}}</option>
         </select>
+
 
     </div>
     
@@ -25,7 +28,99 @@
             <select type="text" [(ngModel)]="questionComplexityList.question_complexity_id">
                 <option *ngFor="let questionComplexity of questionComplexityList" [ngValue]="questionComplexity.question_complexity_id">{{questionComplexity.question_complexity_level_description}}</option>
             </select>
-    </div>
+    </div><br>
     <button (click)="viewQuestions()" class="btn btn-success">View Questions</button>
     <p>{{message}}</p>
-</div>
+</div>  -->
+
+<!--> ///////////////////////////////////////////////////////////////////// <-->
+
+
+
+<div class="row">
+        <table class="col-md-12">
+        
+        <tr><td>
+            <label for="subject">Subject:</label>
+            <select [(ngModel)]="subjectDrop" id="subjectDrop" name="subjectDrop" required class="form-control col-md-6">
+                    <option value="" disabled selected>Select Subject Area</option>    
+                <option *ngFor="let subjectArea of subjectAreas" value="{{subjectArea.quiz_id}}">{{subjectArea.quiz_subject_area}}</option>
+                </select>
+
+        </td><td>
+            
+            <label for="complex">Complexity:</label>
+            <select id="complexDrop" name="complexDrop" [(ngModel)]="complexDrop" required class="form-control col-md-8" id="complexity" name="complexity">
+                    <option value="" disabled selected>Select Complexity</option>     
+                <option *ngFor="let questionComplexity of questionComplexityList" value="{{questionComplexity.question_complexity_id}}">{{questionComplexity.question_complexity_level_description}}</option> 
+                  </select>
+                  </td></tr>
+        </table>
+          </div>
+          
+          <br>
+
+          <!--
+          <div class="input-group">
+            <input type="text" id="q" name="q" [(ngModel)]="q" required placeholder="Enter First Question" class="form-control offset-md-1 col-md-6"/>
+          </div>
+        <br>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="ion-navicon-round offset-md-1" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)" (click)="mycollapse('divq1')"><span class="glyphicon glyphicon-th-list">
+                    </span>Answers</a>
+                </h4>
+            </div>
+            
+            </div>
+        
+          <div id="divq" hidden class="input-group">
+          <div class="row col-md-10">
+        
+            <table border="0" class="offset-md-2 col-md-10">
+                <tr><td></td><td>Correct ?</td></tr>
+                <tr>
+                    <td>
+                       <div class="input-group">
+                        <input type="text" required id="a1" name="a1" [(ngModel)]="a1" placeholder="Answer a." class="form-control"/>
+                       </div> 
+                    </td>
+                    <td >
+                        &nbsp;&nbsp;<input value="answer1" [(ngModel)]="radioQ1" type="radio" id="radioQ1" name="radioQ1"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <div class="input-group"> 
+                        <input type="text" required id="a2"  [(ngModel)]="a2" placeholder="Answer b." class="form-control"/>
+                         </div> 
+                    </td>
+                    <td>&nbsp;&nbsp;<input value="answer2" [(ngModel)]="radioQ1" type="radio" id="radioQ1" name="radioQ1" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input-group">
+                        <input type="text" required id="a3" name="a3" [(ngModel)]="a3" placeholder="Answer c." class="form-control"/>
+                        </div> 
+                    </td>
+                    <td>&nbsp;&nbsp;<input value="answer3" [(ngModel)]="radioQ1" type="radio" id="radioQ1" name="radioQ1" /></td>
+                </tr>
+            <tr>
+                <td><div class="input-group"> 
+                    <input type="text" required id="a4" name="a4" [(ngModel)]="a4" placeholder="Answer d." class="form-control"/>
+                </div>
+                </td>
+                <td>&nbsp;&nbsp;<input value="answer4" [(ngModel)]="radioQ1" type="radio" id="radioQ1" name="radioQ1">
+               </td>
+            </tr>
+            <tr>&nbsp;</tr>
+          </table>
+          </div>
+        
+          </div>-->
+          <br> 
+              <button  (click)="viewQuestions()" class="btn btn-success">View Questions</button>&nbsp;&nbsp; 
+              <span style="color: red">{{message}}</span>
+        
+            
