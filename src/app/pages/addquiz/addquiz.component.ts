@@ -28,6 +28,12 @@ export class AddQuizComponent implements OnInit {
 
   public subjectDrop;
   public complexDrop;
+  public validationComplex;
+  public validationSubject;
+  public validationQuestion;
+  public validationAnswer;
+  public validationResult;
+
 
   public headers;
 
@@ -89,6 +95,61 @@ export class AddQuizComponent implements OnInit {
             
 
             public addQuizSubmit(){
+
+
+                const e = (document.getElementById('subjectDrop')) as HTMLSelectElement;
+                const sel = e.selectedIndex;
+              
+                const complex = (document.getElementById('complexDrop')) as HTMLSelectElement;
+                const complexVal = complex.selectedIndex;
+
+                const quest = (document.getElementById('q')) as HTMLInputElement;
+                const questVal = quest.value;
+
+                const a1 = (document.getElementById('a1')) as HTMLInputElement;
+                const a1Val = a1.value;
+
+                const a2 = (document.getElementById('a2')) as HTMLInputElement;
+                const a2Val = a2.value;
+
+                const a3 = (document.getElementById('a3')) as HTMLInputElement;
+                const a3Val = a3.value;
+
+                const a4 = (document.getElementById('a4')) as HTMLInputElement;
+                const a4Val = a4.value;
+
+                const res = (document.getElementById('radioQ1')) as HTMLInputElement;
+                const resVal = res.checked;
+
+                if (sel < 0){
+                    this.validationSubject = 'Must choose a Subject';
+                    return;
+                }
+
+                if (complexVal < 0){
+                    this.validationComplex = 'Must choose complexity';
+                    return;
+                }
+
+                if (questVal === ''){
+                    // alert('You must specify a question');
+                    this.validationQuestion = 'Must Enter a Question';
+                    return;
+                }
+
+                if (a1Val === '' || a2Val === '' || a3Val === '' || a4Val === '' ){
+                   // alert('Please complete All Answer Fields');
+                   this.validationAnswer = 'Must Complete All Answers';
+                    return;
+                }
+
+                if (this.radioQ1 === undefined){
+                    // alert('Please Choose a Correct Answer');
+                    this.validationResult = 'Must Select a Correct Answer';
+                    return;
+                }
+
+
 
               this.headers = new Headers();
               this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
