@@ -14,13 +14,19 @@
 
     <div class="subjectArea">
         <strong>Subject Area: </strong>
-        
-    </div>
 
+
+        <select type="text" [(ngModel)]="subjectAreas.quiz_id">
+            <option *ngFor="let subjectArea of subjectAreas" [ngValue]="subjectArea.quiz_id">{{subjectArea.quiz_subject_area}}</option>
+        </select>
+
+
+    </div>
+    
     <div class="questionComplexity">
             <strong>Expertise Level: </strong>
-            <select>
-                <option *ngFor="let questionComplexity of questionComplexityList">{{questionComplexity.question_complexity_level_description}}</option>
+            <select type="text" [(ngModel)]="questionComplexityList.question_complexity_id">
+                <option *ngFor="let questionComplexity of questionComplexityList" [ngValue]="questionComplexity.question_complexity_id">{{questionComplexity.question_complexity_level_description}}</option>
             </select>
     </div><br>
     <button (click)="viewQuestions()" class="btn btn-success">View Questions</button>
