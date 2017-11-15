@@ -32,11 +32,6 @@ export class ViewQuizComponent implements OnInit {
           this.message = 'Our Application experienced an issue.  Please try again.';
         }
       },
-      (error) => {
-        if (error.status === 400) {
-          this.message = 'Our Application experienced an issue.  Please try again.';
-        }
-      },
     );
   }
 
