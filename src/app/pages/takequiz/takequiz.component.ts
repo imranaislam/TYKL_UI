@@ -48,7 +48,7 @@ export class TakeQuizComponent implements OnInit {
                     //             }
                     //         ]
                     //     ;
-                    console.log(questionanswers);                    
+                    // console.log(questionanswers);                    
                 }
             },
             (error) => {
@@ -60,6 +60,6 @@ export class TakeQuizComponent implements OnInit {
         );
     }
     public validateAnswers(){
-        console.log(this.answerSelection);
+        // console.log(this.answerSelection);
     }
 }
