@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Router } from '@angular/router';
 import { PagesRoutingModule } from '../pages-routing.module';
@@ -18,6 +18,12 @@ export class RegistrationComponent implements OnInit {
     public validatePassword;
     public validateConfirmPwd;
     public validationEmail;
+    public validationRadioBtn;
+    public validPassword;
+    public radio1;
+
+    @Input() regPassword;
+    @Input() regConfirmPwd;
 
     public ngOnInit(){
     }
@@ -33,8 +39,21 @@ export class RegistrationComponent implements OnInit {
         };
     }
 
+    public matchPwd(e){
+        this.regConfirmPwd = this.regConfirmPwd;
+        this.input.password = this.input.password;
+
+        if (this.regConfirmPwd !== this.input.password){
+          this.validPassword = 'Password did not match';
+            // console.log(this.regConfirmPwd);
+            // console.log(this.input.password);
+            return this.validPassword;
+        }
+    }
+
     public registrationSubmit(){
          // console.log( "Enter registrationSubmit" );
+
          const fName = (document.getElementById('firstName')) as HTMLInputElement;
          const fNameVal = fName.value;
 
@@ -59,7 +78,7 @@ export class RegistrationComponent implements OnInit {
              return;
          }
 
-         const password = (document.getElementById('password')) as HTMLInputElement;
+         const password = (document.getElementById('regPassword')) as HTMLInputElement;
          const passwordVal = password.value;
 
          if (passwordVal === ''){
@@ -67,7 +86,7 @@ export class RegistrationComponent implements OnInit {
              return;
          }
 
-         const confirmpwd = (document.getElementById('passwordconfirmation')) as HTMLInputElement;
+         const confirmpwd = (document.getElementById('regConfirmPwd')) as HTMLInputElement;
          const confirmPwdVal = confirmpwd.value;
 
          if (confirmPwdVal === ''){
@@ -82,6 +101,21 @@ export class RegistrationComponent implements OnInit {
             this.validationEmail = 'Please Enter email address';
             return;
         }
+        // else {
+        //     this.validationEmail = null;
+        // }
+
+        // const userRoleRadio = (document.getElementById('radio1')) as HTMLInputElement;
+        // const userRoleRadioVal = userRoleRadio.checked;
+
+        // console.log(userRoleRadioVal);
+        // if (userRoleRadioVal === false){
+        //     this.validationRadioBtn = 'Please select user type';
+        //     return;
+        // }
+        // else {
+        //     this.validationRadioBtn = null;
+        // }
 
 
         if ( this.input.firstName && 
