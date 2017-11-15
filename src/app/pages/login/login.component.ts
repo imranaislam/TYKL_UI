@@ -30,11 +30,15 @@ export class LoginComponent implements OnInit {
             (data) => {
                 if (data.status === 200) {
                     this.userData = data.json();
+
+                    localStorage.setItem('firstName', this.userData.firstname);
+
                     // console.log(this.userData.userrole);
                     if (this.userData.userrole === 'sme') {
                         localStorage.setItem ('theUser', 'sme'); 
                         this.router.navigate(['pages/dashboard']);
-                    } if (this.userData.userrole === 'user') {
+                    } 
+                    if (this.userData.userrole === 'user') {
                         localStorage.setItem ('theUser', 'user'); 
                         this.router.navigate(['pages/dashboard']);
                     } else {
