@@ -1,8 +1,34 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-xxxl-9 col-xl-12">
     <H3>Welcome to America's Premier Testing site</H3>
   </div>
   <p>We are happy to provide you a platform where you can verify your knowledge level in various subject areas and master them.</p>
   <p>Our Subject Matter Experts (SMEs) are always working on creating new challenges to help you assess your skill levels.</p>
   <p>Please select one of the available subject areas to begin.</p>
+</div> -->
+
+
+<div *ngIf="usertype; else elseblock">
+
+    <div class="col-md-12">
+        <H3>Welcome to America's Premier Testing Site - Admin</H3>
+      </div><br><br>
+      <h4>Hey {{firstName}}! What's up, yo!<br><br>Hope you Enjoy Your Privileged Access.&nbsp;&nbsp;Everyone Should Be So Lucky...</h4><br>
+      
 </div>
+<ng-template #elseblock>
+  <div class="col-md-12">
+    <div class="container-fluid">
+        <H3>Welcome to America's Premier Testing Site</H3><br><br>
+        <table border="0"><tr><td valign="top" width="550px"><br>
+      <h4>Hey <b>{{firstName}}!</b> What's up, yo!</h4><br><br><br>
+        
+        <h4 align="center">Finally, The Time Has Come To....</h4><br>
+      <br><br>
+      <h1 align="right">Test Your Knowledge!!!</h1></td><td width="250px"></td><td width="350px"><ngx-player></ngx-player>
+        </td></tr></table>
+      </div></div>
+
+</ng-template>
+
+
