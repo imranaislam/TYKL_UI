@@ -38,7 +38,9 @@ public retrieveQuestions() {
             this.router.navigate(['pages/updatequiz']);
             this.questionList = questions.json();
           // console.log(questions);          
-          console.log(questions);
+
+          // console.log(questions);
+
         }
        // alert('got here 2');
       },
