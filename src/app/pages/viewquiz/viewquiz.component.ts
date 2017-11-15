@@ -10,7 +10,8 @@ import { PagesRoutingModule } from '../pages-routing.module';
 })
 export class ViewQuizComponent implements OnInit { 
   quizList: any ;
-  message: String;
+  message: string;
+  quizDescription: string;
 
   constructor(private router: Router, private http: Http) {}
 
@@ -23,6 +24,7 @@ retrieveQuiz(){
     this.http.get('http://localhost:8080/test-your-knowledge/viewquiz').subscribe((resp) => {
       if (resp.status === 200){
       this.quizList = resp.json();
+      //this.quizDescription = this.quizList.quiz_description;
       console.log(this.quizList);
     }
   },
@@ -34,11 +36,12 @@ retrieveQuiz(){
     );
   }
 
-  retrieveQuestions(quizId){
+  retrieveQuestions(quizId, quizDescription){
 
    localStorage.setItem('quiz_id', quizId);
-   //localStorage.setItem('quiz_description', quizDescription);
+   localStorage.setItem('quiz_description', quizDescription);
    //alert(localStorage.getItem('quiz_id'));
+   //alert(localStorage.getItem('quiz_description'));
    this.router.navigate(['pages/updatequiz']);
    
   }

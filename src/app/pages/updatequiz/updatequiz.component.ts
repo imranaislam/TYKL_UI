@@ -13,8 +13,10 @@ export class UpdateQuizComponent implements OnInit {
   headers: any;
   message: String;
   quiz_id: number;
-  quiz_description: String;
-
+  quizDescription: string;
+  question_id: number;
+  questionText: string;
+  
   constructor(private router: Router, private http: Http) {}
 
   public ngOnInit() {
@@ -26,7 +28,6 @@ export class UpdateQuizComponent implements OnInit {
 public retrieveQuestions() {
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    // console.log(this.headers);
 
 
     this.http.post('http://localhost:8080/test-your-knowledge/quizquestionlist'
@@ -37,10 +38,11 @@ public retrieveQuestions() {
            // alert('got here');
             this.router.navigate(['pages/updatequiz']);
             this.questionList = questions.json();
-          // console.log(questions);          
-          console.log(questions);
+            this.quizDescription = localStorage.getItem('quiz_description');
+            
+           console.log(questions);          
+
         }
-       // alert('got here 2');
       },
   (error) => {
       if (error.status === 400) {
@@ -49,4 +51,34 @@ public retrieveQuestions() {
   },
     );
   }
+
+  public deleteQuestion(questionId, questionText){
+     localStorage.setItem('question_id', questionId);
+     localStorage.setItem('question_text', questionText);
+          //  alert(localStorage.getItem('question_id'));
+
+    this.headers = new Headers();
+    this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.http.post('http://localhost:8080/test-your-knowledge/delete'
+    , `questionId=${localStorage.getItem('question_id')}`, { headers: this.headers})
+    .subscribe(
+    (data) => {
+      if (data.status === 200) {
+        this.questionText = localStorage.getItem('question_text');
+          this.message = `Following question has been deleted: `;
+          this.ngOnInit();  
+
+      }
+     // alert('got here 2');
+    },
+(error) => {
+    if (error.status === 400) {
+        this.message = 'Our Application experienced an issue.  Please try again.';
+    }
+},
+  );
+     
+}
+
 }
