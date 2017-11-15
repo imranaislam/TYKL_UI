@@ -10,7 +10,8 @@ import { PagesRoutingModule } from '../pages-routing.module';
 })
 export class ViewQuizComponent implements OnInit {
   quizList: any;
-  message: String;
+  message: string;
+  quizDescription: string;
 
   constructor(private router: Router, private http: Http) { }
 
@@ -31,14 +32,19 @@ export class ViewQuizComponent implements OnInit {
           this.message = 'Our Application experienced an issue.  Please try again.';
         }
       },
+      (error) => {
+        if (error.status === 400) {
+          this.message = 'Our Application experienced an issue.  Please try again.';
+        }
+      },
     );
   }
 
-  retrieveQuestions(quizId) {
+  retrieveQuestions(quizId, quizDescription) {
 
     localStorage.setItem('quiz_id', quizId);
-    // localStorage.setItem('quiz_description', quizDescription);
-    // alert(localStorage.getItem('quiz_id'));
+    localStorage.setItem('quiz_description', quizDescription);
+
     this.router.navigate(['pages/updatequiz']);
 
   }
