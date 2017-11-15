@@ -20,7 +20,7 @@
                           <tr>
                             <td>{{quiz.quiz_subject_area}}</td>
                             <td>{{quiz.quiz_description}}</td>
-                            <td><button class="w3-button w3-border w3-small" (click)="retrieveQuestions(quiz.quiz_id)">Questions</button></td>
+                            <td><button class="w3-button w3-border w3-small" (click)="retrieveQuestions(quiz.quiz_id, quiz.quiz_description)">Questions</button></td>
                           </tr>
                         </tbody>
                     </table>

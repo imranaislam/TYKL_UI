@@ -1,10 +1,10 @@
 <br><br>
 <div class="container">
     <div class="row text-center">
-        <div class="col-sm-12">
+        <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4 class="panel-title">List of available questions for the quiz you selected</h4>
+                <h4 class="panel-title">List of available questions for quiz : {{quizDescription}} </h4>
                 <h6>You can delete one question at a time.</h6>
             </div>
             <br><br>
@@ -20,11 +20,13 @@
                           <tr>
                             <td>{{questions.question_id}}</td>
                             <td align = "left">{{questions.question_text}}</td>
-                            <td><button class="w3-button w3-border w3-small">X</button></td>                            
+                            <td><button class="w3-button w3-border w3-small" (click)="deleteQuestion(questions.question_id, questions.question_text)">X</button></td>                            
                           </tr>
                         </tbody>
                     </table>
                     <br>
+                    <h6>{{message}}</h6>
+                    <h6>{{questionText}}</h6>
                 </div>
             </div>
         </div>
