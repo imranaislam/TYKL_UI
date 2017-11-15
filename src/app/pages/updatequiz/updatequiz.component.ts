@@ -35,13 +35,9 @@ public retrieveQuestions() {
       .subscribe(
       (questions) => {
         if (questions.status === 200) {
-           // alert('got here');
             this.router.navigate(['pages/updatequiz']);
             this.questionList = questions.json();
             this.quizDescription = localStorage.getItem('quiz_description');
-            
-           console.log(questions);          
-
         }
       },
   (error) => {
@@ -55,7 +51,6 @@ public retrieveQuestions() {
   public deleteQuestion(questionId, questionText){
      localStorage.setItem('question_id', questionId);
      localStorage.setItem('question_text', questionText);
-          //  alert(localStorage.getItem('question_id'));
 
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -70,7 +65,6 @@ public retrieveQuestions() {
           this.ngOnInit();  
 
       }
-     // alert('got here 2');
     },
 (error) => {
     if (error.status === 400) {

@@ -24,8 +24,7 @@ retrieveQuiz(){
     this.http.get('http://localhost:8080/test-your-knowledge/viewquiz').subscribe((resp) => {
       if (resp.status === 200){
       this.quizList = resp.json();
-      //this.quizDescription = this.quizList.quiz_description;
-      console.log(this.quizList);
+     // console.log(this.quizList);
     }
   },
   (error) => {
@@ -40,8 +39,7 @@ retrieveQuiz(){
 
    localStorage.setItem('quiz_id', quizId);
    localStorage.setItem('quiz_description', quizDescription);
-   //alert(localStorage.getItem('quiz_id'));
-   //alert(localStorage.getItem('quiz_description'));
+
    this.router.navigate(['pages/updatequiz']);
    
   }
