@@ -43,10 +43,10 @@ export class RegistrationComponent implements OnInit {
         this.regConfirmPwd = this.regConfirmPwd;
         this.input.password = this.input.password;
 
-        if (this.regConfirmPwd != this.input.password){
+        if (this.regConfirmPwd !== this.input.password){
           this.validPassword = 'Password did not match';
-            console.log(this.regConfirmPwd);
-            console.log(this.input.password);
+            // console.log(this.regConfirmPwd);
+            // console.log(this.input.password);
             return this.validPassword;
         }
     }
@@ -58,7 +58,6 @@ export class RegistrationComponent implements OnInit {
          const fNameVal = fName.value;
 
          if (fNameVal === ''){
-             console.log(fName)
              this.validateFirstName = 'Please Enter First Name';
              return;
          }
@@ -67,7 +66,6 @@ export class RegistrationComponent implements OnInit {
          const lNameVal = lName.value;
 
          if (lNameVal === ''){
-             console.log(lName)
              this.validateLastName = 'Please Enter Last Name';
              return;
          }
@@ -76,7 +74,6 @@ export class RegistrationComponent implements OnInit {
          const uNameVal = uName.value;
 
          if (uNameVal === ''){
-             console.log(uName)
              this.validateUsername = 'Please Enter User Name';
              return;
          }
@@ -85,7 +82,6 @@ export class RegistrationComponent implements OnInit {
          const passwordVal = password.value;
 
          if (passwordVal === ''){
-             console.log(password)
              this.validatePassword = 'Please Enter Password';
              return;
          }
@@ -94,7 +90,6 @@ export class RegistrationComponent implements OnInit {
          const confirmPwdVal = confirmpwd.value;
 
          if (confirmPwdVal === ''){
-             console.log(confirmpwd)
              this.validateConfirmPwd = 'Please Re-enter Password';
              return;
          }
@@ -103,7 +98,6 @@ export class RegistrationComponent implements OnInit {
          const emailVal = email.value;
 
          if (emailVal === ''){
-             console.log(email)
             this.validationEmail = 'Please Enter email address';
             return;
         }
