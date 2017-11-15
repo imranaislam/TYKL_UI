@@ -13,11 +13,12 @@ export class UpdateQuizComponent implements OnInit {
   headers: any;
   message: String;
   quiz_id: number;
+  quiz_description: String;
 
   constructor(private router: Router, private http: Http) {}
 
   public ngOnInit() {
-  alert('quiz_id:' + localStorage.getItem('quiz_id'));
+  // alert('quiz_id:' + localStorage.getItem('quiz_id'));
   this.retrieveQuestions();
 
   }
@@ -35,8 +36,11 @@ public retrieveQuestions() {
         if (questions.status === 200) {
            // alert('got here');
             this.router.navigate(['pages/updatequiz']);
+            this.questionList = questions.json();
           // console.log(questions);          
+
           // console.log(questions);
+
         }
        // alert('got here 2');
       },

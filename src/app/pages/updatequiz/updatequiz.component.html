@@ -4,20 +4,23 @@
         <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4 class="panel-title">List of your previously created knowledge Testers</h4>
+                <h4 class="panel-title">List of available questions for the quiz you selected</h4>
+                <h6>You can delete one question at a time.</h6>
             </div>
             <br><br>
             <div class="panel-body" >
                     <table border="1" class="allrequests-table">
                         <thead>
-                          <th width="30%">Questio ID</th>
-                          <th width="70%">Question</th>
+                          <th width="10%">ID</th>
+                          <th width="85%">Question</th>
+                          <th >Delete</th>
                           
                         </thead>    
                     <tbody *ngFor="let questions of questionList " >
                           <tr>
                             <td>{{questions.question_id}}</td>
-                            <td>{{questions.question_text}}</td>
+                            <td align = "left">{{questions.question_text}}</td>
+                            <td><button class="w3-button w3-border w3-small" (click)="deleteQuestion(questions.question_id)">X</button></td>                            
                           </tr>
                         </tbody>
                     </table>
