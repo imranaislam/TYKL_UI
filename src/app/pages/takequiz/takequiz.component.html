@@ -4,15 +4,15 @@
       </div>
       <br>
       <br>
-      <div class="panel-body">
-            <table>
+      <!-- </div>{{questionanswers}}</div> -->
 
-                  <tbody>
-                        <tr *ngFor="let questionanswer of questionanswers">{{questionanswers.question_text}}</tr>
-                        <!-- <br>
-                        <td>{{questionanswers.answer_option_text}}</td> -->
-                  </tbody>
-            </table>
+      <div *ngFor="let question of questionanswers; let i = index">{{i+1}}. {{question.question_text}}
+            <div *ngFor="let answer of question.answers">
+                  <input name={{question.question_id}} type="radio"> {{answer.answer_option_text}}
+            </div>
             <br>
       </div>
+      <br>
+      <button (click)="validateAnswers()">Validate Responses</button>
+
 </div>

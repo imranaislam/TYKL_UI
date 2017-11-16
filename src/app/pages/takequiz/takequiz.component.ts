@@ -16,6 +16,7 @@ export class TakeQuizComponent implements OnInit {
     subjectArea: number;
     expertiseLevel: number;
     questionanswers: any;
+    answerSelection: any;
 
     constructor(private router: Router, private http: Http) {
     }
@@ -37,9 +38,17 @@ export class TakeQuizComponent implements OnInit {
             (questionanswers) => {
                 if (questionanswers.status === 200) {
                     this.router.navigate(['pages/takequiz']);
-                    // console.log(questionanswers);
-
                     this.questionanswers = questionanswers.json();
+                    // this.questionanswers = [
+                        
+                    //             {
+                    //                 "answer_id": 1,
+                    //                 "answer_option_text": "class",
+                    //                 "answer_option_validity_flag": "Y"
+                    //             }
+                    //         ]
+                    //     ;
+                    // console.log(questionanswers);                    
                 }
             },
             (error) => {
@@ -49,5 +58,8 @@ export class TakeQuizComponent implements OnInit {
                 }
             },
         );
+    }
+    public validateAnswers(){
+        // console.log(this.answerSelection);
     }
 }
