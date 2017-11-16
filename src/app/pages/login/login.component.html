@@ -25,7 +25,7 @@
 			    		<h1 class="panel-title">Test Your Knowledge</h1>
 			 			</div><br>
 			 			<div class="panel-body">
-			    		<form role="form" name="regForm">
+			    		<form role="form" name="loginForm" #f="ngForm">
 			    			<div class="">
 			    				<div class="col-md-12">
 			    					<div class="form-group">
@@ -41,7 +41,7 @@
                            
 			    			<div class="text-center">
 			    					<div class="form-group">
-                            <input type="submit" (click)="loginSubmit()" value="Login" class="btn btn-info btn-block col-md-12"><br>
+                            <input [disabled]="!f.valid" type="submit" (click)="loginSubmit()" value="Login" class="btn btn-info btn-block col-md-12"><br>
                             <p align="center">New User? <a href="#/auth/registration">Register here</a></p>
                             <span *ngIf=true>{{message}}</span>
                         </div>
