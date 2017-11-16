@@ -1,3 +1,4 @@
+import { forEach } from '@angular/router/src/utils/collection';
 import { Component, OnInit } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
@@ -11,12 +12,14 @@ import { PagesRoutingModule } from '../pages-routing.module';
 
 export class TakeQuizComponent implements OnInit {
 
-    message: String;
+    databaseErrorMessage: String = '';
     headers: any;
     subjectArea: number;
     expertiseLevel: number;
-    questionanswers: any;
-    answerSelection: any;
+    questionanswers: Array<any> = [];
+    expectedAnswers: Array<number> = [];
+    userAnswers: Array<number> = [];
+    validationResults: Array<string> = [];
 
     constructor(private router: Router, private http: Http) {
     }
@@ -26,40 +29,47 @@ export class TakeQuizComponent implements OnInit {
     }
 
     public retrieveQuestions() {
-        // console.log('Retrieving Question and Answers');
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        // console.log('subject ' + (<HTMLInputElement>document.getElementById('subjectAreaSelection')).value);
-        // console.log('expertiseLevel ' + (<HTMLInputElement>document.getElementById('questionComplexitySelection')).value);
         this.http.post('http://localhost:8080/test-your-knowledge/takequiz'
             , `subjectArea=${(<HTMLInputElement>document.getElementById('subjectAreaSelection')).value}&expertiseLevel=${(<HTMLInputElement>document.getElementById('questionComplexitySelection')).value}`, { headers: this.headers })
-            // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
             .subscribe(
-            (questionanswers) => {
-                if (questionanswers.status === 200) {
+            (data) => {
+                if (data.status === 200) {
                     this.router.navigate(['pages/takequiz']);
-                    this.questionanswers = questionanswers.json();
-                    // this.questionanswers = [
-                        
-                    //             {
-                    //                 "answer_id": 1,
-                    //                 "answer_option_text": "class",
-                    //                 "answer_option_validity_flag": "Y"
-                    //             }
-                    //         ]
-                    //     ;
-                    // console.log(questionanswers);                    
+                    this.questionanswers = data.json();
+
+                    for (const question of this.questionanswers) {
+                        for (const answer of question.answers) {
+                            if (answer.answer_option_validity_flag === 'Y') {
+                                this.expectedAnswers[question.question_id] = answer.answer_id;
+                            }
+                        }
+                    }
                 }
             },
             (error) => {
                 if (error.status === 400) {
                     // this.router.navigate(['pages/takequiz']);
-                    this.message = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
+                    this.databaseErrorMessage = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
                 }
             },
         );
     }
-    public validateAnswers(){
-        // console.log(this.answerSelection);
+
+    public saveresponse(question_id: string, answer_id: string) {
+        this.userAnswers[question_id] = answer_id;
+    }
+
+    public validateAnswers() {
+        for (const i in this.expectedAnswers) {
+            if (this.expectedAnswers[i] != null) {
+                if (this.expectedAnswers[i] === this.userAnswers[i]) {
+                    this.validationResults[i] = 'Answer for the question ' + i + ' is Correct';
+                } else {
+                    this.validationResults[i] = 'Answer for the question ' + i + ' is Wrong.  Correct Answer is ' + this.expectedAnswers[i];
+                }
+            }
+        }
     }
 }
