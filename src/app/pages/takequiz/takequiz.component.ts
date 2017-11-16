@@ -12,7 +12,7 @@ import { PagesRoutingModule } from '../pages-routing.module';
 
 export class TakeQuizComponent implements OnInit {
 
-    databaseErrorMessage: String = "";
+    databaseErrorMessage: String = '';
     headers: any;
     subjectArea: number;
     expertiseLevel: number;
@@ -29,23 +29,19 @@ export class TakeQuizComponent implements OnInit {
     }
 
     public retrieveQuestions() {
-        // console.log('Retrieving Question and Answers');
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        // console.log('subject ' + (<HTMLInputElement>document.getElementById('subjectAreaSelection')).value);
-        // console.log('expertiseLevel ' + (<HTMLInputElement>document.getElementById('questionComplexitySelection')).value);
         this.http.post('http://localhost:8080/test-your-knowledge/takequiz'
             , `subjectArea=${(<HTMLInputElement>document.getElementById('subjectAreaSelection')).value}&expertiseLevel=${(<HTMLInputElement>document.getElementById('questionComplexitySelection')).value}`, { headers: this.headers })
-            // , `subjectArea=${this.subjectArea}&expertiseLevel=${this.expertiseLevel}`, { headers: this.headers })
             .subscribe(
             (data) => {
                 if (data.status === 200) {
                     this.router.navigate(['pages/takequiz']);
                     this.questionanswers = data.json();
 
-                    for (let question of this.questionanswers) {
-                        for (let answer of question.answers) {
-                            if (answer.answer_option_validity_flag == "Y") {
+                    for (const question of this.questionanswers) {
+                        for (const answer of question.answers) {
+                            if (answer.answer_option_validity_flag === 'Y') {
                                 this.expectedAnswers[question.question_id] = answer.answer_id;
                             }
                         }
@@ -60,23 +56,18 @@ export class TakeQuizComponent implements OnInit {
             },
         );
     }
-    // public validateAnswers(){
-    //     console.log(this.radioSelected);
-    //     let obj = JSON.parse(this.questionanswers); 
-    //     console.log(obj);  
-    // }
 
     public saveresponse(question_id: string, answer_id: string) {
         this.userAnswers[question_id] = answer_id;
     }
 
     public validateAnswers() {
-        for (let i in this.expectedAnswers) {
+        for (const i in this.expectedAnswers) {
             if (this.expectedAnswers[i] != null) {
                 if (this.expectedAnswers[i] === this.userAnswers[i]) {
-                    this.validationResults[i] = "Answer for the question " + i + " is Correct";
+                    this.validationResults[i] = 'Answer for the question ' + i + ' is Correct';
                 } else {
-                    this.validationResults[i] = "Answer for the question " + i + " is Wrong.  Correct Answer is " + this.expectedAnswers[i];
+                    this.validationResults[i] = 'Answer for the question ' + i + ' is Wrong.  Correct Answer is ' + this.expectedAnswers[i];
                 }
             }
         }
