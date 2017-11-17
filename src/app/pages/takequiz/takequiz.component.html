@@ -8,18 +8,20 @@
       </div>
       <br>
       <br>
-
       <div *ngFor="let question of questionanswers; let i = index">{{i+1}}. {{question.question_text}}
-            <div *ngFor="let answer of question.answers">
-                  <input name={{question.question_id}} type="radio" (click)="saveresponse(question.question_id, answer.answer_id)"> {{answer.answer_option_text}}
+        <div style="padding:20px;">
+            <div *ngFor="let answer of question.answers"> &nbsp;&nbsp;
+                  <input name={{question.question_id}} type="radio" (click)="saveresponse(question.question_id, answer.answer_id)"> &nbsp;&nbsp;{{answer.answer_option_text}}
             </div>
             <br>
+        </div>
       </div>
       <br> {{databaseErrorMessage}}
       <button class="btn btn-success" (click)="validateAnswers()">Validate Responses</button>
       <br>
       <br>
       <div *ngFor="let validationResult of validationResults">{{validationResult}}</div>
-
+      <br>
+      <br>
 </div>
 

@@ -1,0 +1,14 @@
+h3 {
+    padding-top: 1cm;
+    text-align: center;
+    padding-bottom: 1cm;
+}
+h3.header{
+    
+color: rgb(110, 212, 113);
+}
+p {
+  text-indent: 50px;
+  color: rgba(23, 176, 214, 0.726);
+    font: 15px sans-serif;
+}
