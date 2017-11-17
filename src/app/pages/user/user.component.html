@@ -1,30 +1,42 @@
 <div>
-        <div class="header">
+        <!-- <div class="header">
             <br>
             <H3 class=header>Welcome to America's Premier Testing site</H3>
-        </div>
-    
+        </div> -->
+
+        <div class="header">
+                <br>
+                  <H4 class=header>
+                    <a class="ion-navicon-round" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)"><span class="glyphicon glyphicon-th-list">
+                    </span>Are you ready to test your knowledge {{firstName}} ? </a>  
+                  </H4>
+              </div>
+    <br>
         <div class="body">
-            <p>We are happy to provide you a platform where you can verify your knowledge level in various subject areas and master
+             <h6>We are happy to provide you a platform where you can verify your knowledge level in various subject areas and master
                 them.
-            </p>
-            <p>Our Subject Matter Experts (SMEs) are always working on creating new challenges to help you assess your skill levels.</p>
-            <p>Please select one of the available subject areas and expertise level to begin.</p>
+            </h6>
+            <h6>Our Subject Matter Experts (SMEs) are always working on creating new challenges to help you assess your skill levels.</h6>
+            <h6>Please select one of the available subject areas and expertise level to begin.</h6>
         </div>
-    
+    <br><br>
+    <div>
         <div class="subjectArea">
             <strong>Subject Area: </strong>
             <select id="subjectAreaSelection" type="text" >
                 <option value={{subjectArea.quiz_id}} *ngFor="let subjectArea of subjectAreas">{{subjectArea.quiz_subject_area}}</option>
             </select>
+        </div>
+        <br>
             <div class="questionComplexity">
                 <strong>Expertise Level: </strong>
                 <select id="questionComplexitySelection" type="text">
                     <option *ngFor="let questionComplexity of questionComplexityList" value={{questionComplexity.question_complexity_id}}>{{questionComplexity.question_complexity_level_description}}</option>
                 </select>
             </div>
+ 
         </div>
-        <br>
+        <br><br>
         <button (click)="viewQuestions()" class="btn btn-success">View Questions</button>
         <p>{{message}}</p>
     </div>

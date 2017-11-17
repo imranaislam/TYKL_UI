@@ -21,20 +21,23 @@ table {
     margin-right: auto;
 }
 table, th, td {
-    border: 1px solid grey;
+  border: 1px solid grey;
     border-collapse: collapse;
     padding: 5px;
-    color: black;
+    color: #ffffff;
     
   }
   table th {
-    background-color:  #afdbf8;
+    background-color:  #2980b9;
+    color: white;
   }
   table tr:nth-child(odd) {
-    background-color:  #ffffff;
+    background-color: #0d2c70;
+    color: #ffffff;
   }
   table tr:nth-child(even) {
     background-color: #ffffff;
+    color: #ffffff;
   }
 
   button {
