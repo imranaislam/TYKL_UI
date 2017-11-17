@@ -23,14 +23,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Create a new Quiz',
         link: '/pages/addquiz',
       },
-      {
-        title: 'Update an existing Quiz',
-        link: '/pages/updatequiz',
-      },
-      {
-        title: 'Delete an existing Quiz',
-        link: '/pages/deletequiz',
-      },
+      // {
+      //   title: 'Update an existing Quiz',
+      //   link: '/pages/updatequiz',
+      // },
+      // {
+      //   title: 'Delete an existing Quiz',
+      //   link: '/pages/deletequiz',
+      // },
     ],
   },
   {

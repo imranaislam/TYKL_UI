@@ -16,10 +16,12 @@ export class UserComponent implements OnInit {
     headers: any;
     subjectArea: number;
     expertiseLevel: number;
+    firstName: String;
 
     public ngOnInit() {
         this.retrieveSubjectAreas();
         this.retrieveQuestionComplexityList();
+        this.firstName = localStorage.getItem('firstName');
     }
 
     constructor(private router: Router, private http: Http) {
