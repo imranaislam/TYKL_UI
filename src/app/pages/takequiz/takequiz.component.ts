@@ -18,6 +18,7 @@ export class TakeQuizComponent implements OnInit {
     expertiseLevel: number;
     questionanswers: Array<any> = [];
     expectedAnswers: Array<number> = [];
+    expectedAnswersOptionText: Array<number> = [];
     userAnswers: Array<number> = [];
     validationResults: Array<string> = [];
 
@@ -43,6 +44,7 @@ export class TakeQuizComponent implements OnInit {
                         for (const answer of question.answers) {
                             if (answer.answer_option_validity_flag === 'Y') {
                                 this.expectedAnswers[question.question_id] = answer.answer_id;
+                                this.expectedAnswersOptionText[question.question_id] = answer.answer_option_text;
                             }
                         }
                     }
@@ -50,7 +52,7 @@ export class TakeQuizComponent implements OnInit {
             },
             (error) => {
                 if (error.status === 400) {
-                    // this.router.navigate(['pages/takequiz']);
+                    this.router.navigate(['pages/takequiz']);
                     this.databaseErrorMessage = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
                 }
             },
@@ -63,11 +65,11 @@ export class TakeQuizComponent implements OnInit {
 
     public validateAnswers() {
         for (const i in this.expectedAnswers) {
-            if (this.expectedAnswers[i] != null) {
+            if (this.expectedAnswers[i] !== null) {
                 if (this.expectedAnswers[i] === this.userAnswers[i]) {
-                    this.validationResults[i] = 'Answer for the question ' + i + ' is Correct';
+                    this.validationResults[i] = 'Answer for the question ' + i + ' is Correct.';
                 } else {
-                    this.validationResults[i] = 'Answer for the question ' + i + ' is Wrong.  Correct Answer is ' + this.expectedAnswers[i];
+                    this.validationResults[i] = 'Answer for the question ' + i + ' is Wrong.  Correct Answer is ' + this.expectedAnswersOptionText[i] + '.';
                 }
             }
         }
