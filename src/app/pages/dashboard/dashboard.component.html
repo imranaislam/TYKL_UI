@@ -6,27 +6,59 @@
   <p>Our Subject Matter Experts (SMEs) are always working on creating new challenges to help you assess your skill levels.</p>
   <p>Please select one of the available subject areas to begin.</p>
 </div> -->
-
+<br><br><br>
+<!--<div class="panel-heading">
+    <h4 class="panel-title">
+            <a class="ion-navicon-round" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)"><span class="glyphicon glyphicon-th-list">
+                </span>Welcome to America's Premier Testing Site - Admin</a>  
+    </h4>
+    <h4>Hey {{firstName}}! What's up, yo!<br><br>Hope you Enjoy Your Privileged Access.&nbsp;&nbsp;Everyone Should Be So Lucky...</h4><br>
+</div>-->
 
 <div *ngIf="usertype; else elseblock">
 
-    <div class="col-md-12">
+   <!-- <div class="col-md-12">
         <H3>Welcome to America's Premier Testing Site - Admin</H3>
       </div><br><br>
       <h4>Hey {{firstName}}! What's up, yo!<br><br>Hope you Enjoy Your Privileged Access.&nbsp;&nbsp;Everyone Should Be So Lucky...</h4><br>
-      
+    -->
+    <div class="col-md-10">
+        <h4 class="panel-title">
+                <a class="ion-navicon-round" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)"><span class="glyphicon glyphicon-th-list">
+                    </span>Welcome to America's Premier Testing Site - Admin Page</a>  
+        </h4>
+          <br><br>
+        <h5>Welcome back, {{firstName}}!! </h5><br>
+          <br><h6>As a Subject Matter Expert(SME) for this site, your responsibility is to create
+             new challenges to help assess skill levels of users. <br>
+            you have the previledge to view existing subject areas and quizzes, 
+            add new questions to a subject area of your choice, and delete existing questions that are not relevent anymore </h6><br>
+    </div>
 </div>
+
 <ng-template #elseblock>
   <div class="col-md-12">
     <div class="container-fluid">
-        <H3>Welcome to America's Premier Testing Site</H3><br><br>
-        <table border="0"><tr><td valign="top" width="550px"><br>
-      <h4>Hey <b>{{firstName}}!</b> What's up, yo!</h4><br><br><br>
-        
-        <h4 align="center">Finally, The Time Has Come To....</h4><br>
-      <br><br>
-      <h1 align="right">Test Your Knowledge!!!</h1></td><td width="250px"></td><td width="350px"><ngx-player></ngx-player>
-        </td></tr></table>
+      <h4 class="panel-title">
+       <a class="ion-navicon-round" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)"><span class="glyphicon glyphicon-th-list">
+        </span>Welcome to America's Premier Testing Site - {{firstName}}</a>  
+      </h4>
+    <br><br>
+    <table border="0">
+      <tr>
+        <td valign="top" width="550px"><br>
+          <h4 align="center">Finally, The Time Has Come To....</h4><br>
+          <br><br>
+          <h1 align="right">Test Your Knowledge!!!</h1>
+        </td>
+        <td width="250px">
+
+        </td>
+        <td width="350px">
+          <ngx-player></ngx-player>
+        </td>
+      </tr>
+    </table>
       </div></div>
 
 </ng-template>
