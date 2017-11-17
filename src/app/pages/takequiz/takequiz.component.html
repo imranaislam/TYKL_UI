@@ -15,9 +15,10 @@
             </div>
             <br>
       </div>
-      {{databaseErrorMessage}}
-      <br>
+      <br> {{databaseErrorMessage}}
       <button class="btn btn-success" (click)="validateAnswers()">Validate Responses</button>
+      <br>
+      <br>
       <div *ngFor="let validationResult of validationResults">{{validationResult}}</div>
 
 </div>
