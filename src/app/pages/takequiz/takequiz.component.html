@@ -1,7 +1,7 @@
 <div>
       <div class="header">
             <h4 class="panel-title">
-                  <a class="ion-navicon-round" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)">
+                  <a data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)">
                         <span class="glyphicon glyphicon-th-list">
                         </span>Following Questionnaire is prepared based on your selection: </a>
 
@@ -10,20 +10,21 @@
       <br>
       <br>
       <div *ngFor="let question of questionanswers; let i = index">{{i+1}}. {{question.question_text}}
-        <div style="padding:20px;">
-            <div *ngFor="let answer of question.answers"> &nbsp;&nbsp;
-                  <input name={{question.question_id}} type="radio" (click)="saveresponse(question.question_id, answer.answer_id)"> &nbsp;&nbsp;{{answer.answer_option_text}}
+            <div style="padding:20px;">
+                  <div *ngFor="let answer of question.answers"> &nbsp;&nbsp;
+                        <input name={{question.question_id}} type="radio" (click)="saveresponse(question.question_id, answer.answer_id)"> &nbsp;&nbsp;{{answer.answer_option_text}}
+                  </div>
             </div>
-            <br>
-        </div>
       </div>
-      <br> {{errorMessage}}
+      <p class=errormessage>{{errorMessage}}</p>
       <br>
       <br>
       <button class="btn btn-success" (click)="validateAnswers()">Validate Responses</button>
       <br>
       <br>
-      <div>{{this.successRate}}</div>
+      <div>
+            <strong>{{this.successRate}}</strong>
+      </div>
       <br>
       <div *ngFor="let validationResult of validationResults">{{validationResult}}</div>
       <br>

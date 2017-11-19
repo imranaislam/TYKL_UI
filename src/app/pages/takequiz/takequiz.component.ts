@@ -21,14 +21,17 @@ export class TakeQuizComponent implements OnInit {
     expectedAnswersOptionText: Array<number> = [];
     userAnswers: Array<number> = [];
     validationResults: Array<string> = [];
-    totalQuestionsAnswered: any;
-    successRate: any;
+    totalQuestionsAnswered: number;
+    numberOfCorrect: number;
+    successRate: string;
 
     constructor(private router: Router, private http: Http) {
     }
 
     public ngOnInit() {
         this.retrieveQuestions();
+        this.totalQuestionsAnswered = 0;
+        this.numberOfCorrect = 0;
     }
 
     public retrieveQuestions() {
@@ -67,22 +70,22 @@ export class TakeQuizComponent implements OnInit {
     }
 
     public validateAnswers() {
-        let numberOfCorrect: any;
+
         if (this.totalQuestionsAnswered !== this.questionanswers.length) {
-            this.errorMessage = 'You must answer all the Questions to begin validation';
+            this.errorMessage = 'You must answer all the Questions to begin validation.';
         } else {
             this.errorMessage = '';
             for (const i in this.expectedAnswers) {
                 if (this.expectedAnswers[i] !== null) {
                     if (this.expectedAnswers[i] === this.userAnswers[i]) {
                         this.validationResults[i] = 'Answer for the question ' + i + ' is Correct.';
-                        numberOfCorrect += 1;
+                        this.numberOfCorrect += 1;
                     } else {
                         this.validationResults[i] = 'Answer for the question ' + i + ' is Wrong.  Correct Answer is ' + this.expectedAnswersOptionText[i] + '.';
                     }
                 }
             }
-            this.successRate = 'Percentage of correct responses : ' + (Math.round((numberOfCorrect / this.questionanswers.length) * 100) + '%');
+            this.successRate = 'Percentage of correct responses: ' + (Math.round((this.numberOfCorrect / this.questionanswers.length) * 100));
         }
     }
 }

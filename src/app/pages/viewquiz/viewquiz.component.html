@@ -1,35 +1,36 @@
+<br>
 
-
-<br><br>
+<br>
 <div class="container">
     <div class="row text-center">
         <div class="col-sm-12">
-        <div class="panel panel-default">
-           <!-- <div class="panel-heading">
-                <h4 class="panel-title">List of your previously created knowledge Testers</h4>
-            </div>-->
+            <div class="panel panel-default">
 
-<div class="panel-heading">
-                <h4 class="panel-title">
-                  <a class="ion-navicon-round" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)"><span class="glyphicon glyphicon-th-list">
-                            </span>List of your previously created knowledge Testers</a>   
-                </h4>
-            </div>
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)">
+                            <span class="glyphicon glyphicon-th-list">
+                            </span>List of your previously created knowledge Testers</a>
+                    </h4>
+                </div>
 
-            <br><br>
-            <div class="panel-body" >
+                <br>
+                <br>
+                <div class="panel-body">
                     <table border="1" class="allrequests-table">
                         <thead>
-                          <th width="20%">Category</th>
-                          <th width="60%">Title</th>
-                          <th width="20%">View/Delete</th>
-                        </thead>    
+                            <th width="20%">Category</th>
+                            <th width="60%">Title</th>
+                            <th width="20%">View/Delete</th>
+                        </thead>
                         <tbody *ngFor="let quiz of quizList ">
-                          <tr>
-                            <td>{{quiz.quiz_subject_area}}</td>
-                            <td>{{quiz.quiz_description}}</td>
-                            <td><button class="w3-button w3-border w3-small" (click)="retrieveQuestions(quiz.quiz_id, quiz.quiz_description)">Questions</button></td>
-                          </tr>
+                            <tr>
+                                <td>{{quiz.quiz_subject_area}}</td>
+                                <td>{{quiz.quiz_description}}</td>
+                                <td>
+                                    <button class="w3-button w3-border w3-small" (click)="retrieveQuestions(quiz.quiz_id, quiz.quiz_description)">Questions</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <br>
