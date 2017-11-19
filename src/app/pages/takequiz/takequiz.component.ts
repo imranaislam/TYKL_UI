@@ -21,8 +21,8 @@ export class TakeQuizComponent implements OnInit {
     expectedAnswersOptionText: Array<number> = [];
     userAnswers: Array<number> = [];
     validationResults: Array<string> = [];
-    totalQuestionsAnswered: number = 0;
-    successRate: string = "";
+    totalQuestionsAnswered: any;
+    successRate: any;
 
     constructor(private router: Router, private http: Http) {
     }
@@ -67,9 +67,9 @@ export class TakeQuizComponent implements OnInit {
     }
 
     public validateAnswers() {
-        let numberOfCorrect: number = 0;
+        let numberOfCorrect: any;
         if (this.totalQuestionsAnswered !== this.questionanswers.length) {
-            this.errorMessage = "You must answer all the Questions to begin validation";
+            this.errorMessage = 'You must answer all the Questions to begin validation';
         } else {
             this.errorMessage = "";
             for (const i in this.expectedAnswers) {
@@ -82,7 +82,7 @@ export class TakeQuizComponent implements OnInit {
                     }
                 }
             }
-            this.successRate = "Percentage of correct responses : " + (Math.round((numberOfCorrect / this.questionanswers.length) * 100) + "%");
+            this.successRate = 'Percentage of correct responses : ' + (Math.round((numberOfCorrect / this.questionanswers.length) * 100) + '%');
         }
     }
 }
