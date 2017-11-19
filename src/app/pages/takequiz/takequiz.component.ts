@@ -12,7 +12,7 @@ import { PagesRoutingModule } from '../pages-routing.module';
 
 export class TakeQuizComponent implements OnInit {
 
-    databaseErrorMessage: String = '';
+    errorMessage: String = '';
     headers: any;
     subjectArea: number;
     expertiseLevel: number;
@@ -21,6 +21,8 @@ export class TakeQuizComponent implements OnInit {
     expectedAnswersOptionText: Array<number> = [];
     userAnswers: Array<number> = [];
     validationResults: Array<string> = [];
+    totalQuestionsAnswered: any;
+    successRate: any;
 
     constructor(private router: Router, private http: Http) {
     }
@@ -53,7 +55,7 @@ export class TakeQuizComponent implements OnInit {
             (error) => {
                 if (error.status === 400) {
                     this.router.navigate(['pages/takequiz']);
-                    this.databaseErrorMessage = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
+                    this.errorMessage = 'Our Sincere Apologies.  We are working on creating challenges in the subject area you chose.  Please come back soon and try again.';
                 }
             },
         );
@@ -61,17 +63,26 @@ export class TakeQuizComponent implements OnInit {
 
     public saveresponse(question_id: string, answer_id: string) {
         this.userAnswers[question_id] = answer_id;
+        this.totalQuestionsAnswered += 1;
     }
 
     public validateAnswers() {
-        for (const i in this.expectedAnswers) {
-            if (this.expectedAnswers[i] !== null) {
-                if (this.expectedAnswers[i] === this.userAnswers[i]) {
-                    this.validationResults[i] = 'Answer for the question ' + i + ' is Correct.';
-                } else {
-                    this.validationResults[i] = 'Answer for the question ' + i + ' is Wrong.  Correct Answer is ' + this.expectedAnswersOptionText[i] + '.';
+        let numberOfCorrect: any;
+        if (this.totalQuestionsAnswered !== this.questionanswers.length) {
+            this.errorMessage = 'You must answer all the Questions to begin validation';
+        } else {
+            this.errorMessage = '';
+            for (const i in this.expectedAnswers) {
+                if (this.expectedAnswers[i] !== null) {
+                    if (this.expectedAnswers[i] === this.userAnswers[i]) {
+                        this.validationResults[i] = 'Answer for the question ' + i + ' is Correct.';
+                        numberOfCorrect += 1;
+                    } else {
+                        this.validationResults[i] = 'Answer for the question ' + i + ' is Wrong.  Correct Answer is ' + this.expectedAnswersOptionText[i] + '.';
+                    }
                 }
             }
+            this.successRate = 'Percentage of correct responses : ' + (Math.round((numberOfCorrect / this.questionanswers.length) * 100) + '%');
         }
     }
 }

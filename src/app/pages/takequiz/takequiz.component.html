@@ -1,10 +1,11 @@
 <div>
       <div class="header">
             <h4 class="panel-title">
-                        <a class="ion-navicon-round" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)"><span class="glyphicon glyphicon-th-list">
-                            </span>Following Questionnaire is prepared based on your selection: </a>  
-    
-                </h4>
+                  <a class="ion-navicon-round" data-toggle="collapse out" data-parent="#accordion" href="javascript:void(0)">
+                        <span class="glyphicon glyphicon-th-list">
+                        </span>Following Questionnaire is prepared based on your selection: </a>
+
+            </h4>
       </div>
       <br>
       <br>
@@ -16,12 +17,15 @@
             <br>
         </div>
       </div>
-      <br> {{databaseErrorMessage}}
+      <br> {{errorMessage}}
+      <br>
+      <br>
       <button class="btn btn-success" (click)="validateAnswers()">Validate Responses</button>
       <br>
+      <br>
+      <div>{{this.successRate}}</div>
       <br>
       <div *ngFor="let validationResult of validationResults">{{validationResult}}</div>
       <br>
       <br>
 </div>
-
