@@ -10,5 +10,8 @@ color: rgb(110, 212, 113);
 p {
   text-indent: 50px;
   color: rgba(23, 176, 214, 0.726);
-    font: 15px sans-serif;
+}
+p.errormessage{
+    text-indent: 10px;
+color: rgb(211, 25, 22);
 }
