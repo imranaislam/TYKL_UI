@@ -71,7 +71,7 @@ export class TakeQuizComponent implements OnInit {
         if (this.totalQuestionsAnswered !== this.questionanswers.length) {
             this.errorMessage = 'You must answer all the Questions to begin validation';
         } else {
-            this.errorMessage = "";
+            this.errorMessage = '';
             for (const i in this.expectedAnswers) {
                 if (this.expectedAnswers[i] !== null) {
                     if (this.expectedAnswers[i] === this.userAnswers[i]) {
