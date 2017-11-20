@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     }
 
     public loginSubmit() {
-        this.message = 'Verify User Eligibility...'
+        this.message = 'Verify User Eligibility...';
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http.post('http://localhost:8080/test-your-knowledge/login'
