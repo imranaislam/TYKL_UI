@@ -1,26 +1,7 @@
-<!-- <div class="row">
-<div class="grad"></div> 
-    <div class="col-lg-6"> 
-        <div><br><span style="color: rgb(0, 255, 13)">T Y K L</span></div>
-    </div>
-    <br>
-    <div class="input-group">
-        <input type="text" [(ngModel)]="username" placeholder="Enter Username" id="username" name="username"><br>
-        </div>
-        <input type="password" [(ngModel)]="password" placeholder="Enter Password" id="password" name="password"><br>
-        <input type="button" (click)="loginSubmit()" value="Login"><br> <br>
-        <p>New User? <a href="#/auth/registration">Register here</a></p>
-        <span *ngIf=true>{{message}}</span>
-    
-</div> -->
-
-
-
-
 <div class="container">
-    <div class="row">
+    <!-- <div class="row">
         <img src="../../assets/images/tykl.png" class="img-responsive">
-    </div>
+    </div> -->
     <br>
         <div class="row text-center">
                 <div class="col-lg-12">
@@ -47,7 +28,7 @@
 			    					<div class="form-group">
                             <input [disabled]="!f.valid" type="submit" (click)="loginSubmit()" value="Login" class="btn btn-info btn-block col-md-12"><br>
                             <p align="center">New User? <a href="#/auth/registration">Register here</a></p>
-                            <span *ngIf=true>{{message}}</span>
+							<span *ngIf=true style="color: rgb(219, 24, 24)">{{message}}</span>
                         </div>
                     </div>
 			    		</form>

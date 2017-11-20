@@ -22,12 +22,14 @@ export class LoginComponent implements OnInit {
     }
 
     public loginSubmit() {
+        this.message = 'Verify User Eligibility...';
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http.post('http://localhost:8080/test-your-knowledge/login'
             , `username=${this.username}&password=${this.password}`, { headers: this.headers })
             .subscribe(
             (data) => {
+                this.message = '';
                 if (data.status === 200) {
                     this.userData = data.json();
 
@@ -35,11 +37,11 @@ export class LoginComponent implements OnInit {
 
                     // console.log(this.userData.userrole);
                     if (this.userData.userrole === 'sme') {
-                        localStorage.setItem ('theUser', 'sme'); 
+                        localStorage.setItem('theUser', 'sme');
                         this.router.navigate(['pages/dashboard']);
-                    } 
+                    }
                     if (this.userData.userrole === 'user') {
-                        localStorage.setItem ('theUser', 'user'); 
+                        localStorage.setItem('theUser', 'user');
                         this.router.navigate(['pages/dashboard']);
                     } else {
                         this.message = 'You are not a registered user.  Please register using "Register here" link above.';
@@ -47,6 +49,7 @@ export class LoginComponent implements OnInit {
                 }
             },
             (error) => {
+                this.message = '';
                 if (error.status === 400) {
                     this.message = 'You are not a registered user.  Please register using "Register here" link above.';
                 }

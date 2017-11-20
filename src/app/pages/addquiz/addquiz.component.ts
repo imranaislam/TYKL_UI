@@ -158,8 +158,8 @@ export class AddQuizComponent implements OnInit {
               .subscribe(
                 (data) => {
                   if (data.status === 200){
-                    this.message = `Question created!`;
-                    sleep (1000).then(() => {
+                    this.message = `Successfully added the new Question and Answers!`;
+                    sleep (2000).then(() => {
                      location.reload();
                     
                   }); 
